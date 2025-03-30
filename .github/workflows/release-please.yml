@@ -7,19 +7,19 @@ on:
     inputs:
       force-release-theme:
         description: "Force a release of tsdevau-catppuccin-vsc"
-        default: false
+        default: true
         type: boolean
       rev:
         description: "The revision to clone for the release"
-        default: ""
+        default: "3.18.0"
         type: string
       force-release-theme-tag:
         description: "The version to release tsdevau-catppuccin-vsc as"
-        default: ""
+        default: "3.18.0"
         type: string
       force-release-pack:
         description: "Force a release of tsdevau-catppuccin-vsc-pack"
-        default: false
+        default: true
         type: boolean
       # force-release-npm:
       #   description: "Force a release of @catppuccin/vscode"

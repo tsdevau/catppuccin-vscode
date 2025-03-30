@@ -16,7 +16,7 @@
     "storybook": "^8.6.7",
     "vite": "^6.0.0",
     "@catppuccin/palette": "catalog:",
-    "@catppuccin/vscode": "workspace:*",
+    "tsdevau-catppuccin-vscode": "workspace:*",
     "@tsconfig/node22": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
@@ -24,8 +24,7 @@
     "typescript": "catalog:"
   },
   "scripts": {
-    "storybook:chromatic": "chromatic --exit-zero-on-changes --exit-once-uploaded --project-token chpt_e3cba49738d7554",
-    "storybook:build": "pnpm --filter catppuccin-vsc core:build && storybook build",
+    "storybook:build": "pnpm --filter tsdevau-catppuccin-vsc core:build && storybook build",
     "storybook:dev": "storybook dev -p 6006"
   },
   "engines": {
@@ -33,14 +32,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/catppuccin/vscode.git",
-    "directory": "packages/catppuccin-vsc-storybook"
+    "url": "https://github.com/tsdevau/catppuccin-vscode.git",
+    "directory": "packages/tsdevau-catppuccin-vsc-storybook"
   },
-  "homepage": "https://github.com/catppuccin/vscode/tree/main/packages/catppuccin-vsc-storybook#readme",
+  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
   "bugs": {
-    "url": "https://github.com/catppuccin/vscode/issues"
-  },
-  "sponsor": {
-    "url": "https://opencollective.com/catppuccin"
+    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
   }
 }

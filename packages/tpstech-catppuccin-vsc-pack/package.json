@@ -1,7 +1,7 @@
 {
   "name": "tpstech-catppuccin-vsc-pack",
   "displayName": "Catppuccin Theme & Icon Pack by tpsTech",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "Combines a soothing pastel theme based on the Catppuccin theme with adjusted syntax highlighting and Catppuccin Icons for VSCode",
   "categories": [

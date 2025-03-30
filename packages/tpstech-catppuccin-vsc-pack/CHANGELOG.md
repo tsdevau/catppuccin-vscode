@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vsc-pack-v1.1.0...tpstech-catppuccin-vsc-pack-v1.1.1) (2025-03-30)
+
+
+### Bug Fixes
+
+* **vsc-pack:** update theme pack name and description ([1ea5325](https://github.com/tsdevau/catppuccin-vscode/commit/1ea5325a7a86606e377c3ceeeda6b33a9f0d279d))
+
 ## [1.1.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vsc-pack-v1.0.2...tpstech-catppuccin-vsc-pack-v1.1.0) (2025-03-30)
 
 

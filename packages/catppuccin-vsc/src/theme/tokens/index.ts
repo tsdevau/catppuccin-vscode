@@ -38,14 +38,21 @@ export default function tokens(context: ThemeContext): TextmateColors {
         "punctuation.definition.variable",
       ],
       settings: {
-        foreground: palette.text,
+        foreground: "#f4f4f5",
+      },
+    },
+    {
+      name: "Symbols",
+      scope: "constant.other.symbol",
+      settings: {
+        foreground: "#c084fc",
       },
     },
     {
       name: "Parentheses, Brackets, Braces",
       scope: "punctuation",
       settings: {
-        foreground: palette.overlay2,
+        foreground: "#a8a29e",
         fontStyle: "",
       },
     },
@@ -53,65 +60,120 @@ export default function tokens(context: ThemeContext): TextmateColors {
       name: "Comments",
       scope: ["comment", "punctuation.definition.comment"],
       settings: {
-        foreground: palette.overlay2,
+        foreground: "#a8a29e",
         fontStyle: options.italicComments ? "italic" : "",
       },
     },
     {
       scope: ["string", "punctuation.definition.string"],
       settings: {
-        foreground: palette.green,
+        foreground: "#6ee7b7",
       },
     },
     {
+      name: "Template literal quasi element",
+      scope: ["punctuation.quasi.element"],
+      settings: {
+        foreground: "#c084fc",
+        fontStyle: "italic",
+      },
+    },
+    {
+      name: "Escape characters",
       scope: "constant.character.escape",
       settings: {
-        foreground: palette.pink,
+        foreground: "#c084fc",
       },
     },
     {
-      name: "Booleans, constants, numbers",
+      name: "Numbers",
       scope: [
         "constant.numeric",
-        "variable.other.constant",
-        "entity.name.constant",
-        "constant.language.boolean",
-        "constant.language.false",
-        "constant.language.true",
         "keyword.other.unit.user-defined",
         "keyword.other.unit.suffix.floating-point",
       ],
       settings: {
-        foreground: palette.peach,
+        foreground: "#FF8A65",
       },
     },
     {
+      name: "Constants",
       scope: [
-        "keyword",
+        "variable.other.constant",
+        "entity.name.constant",
+        "entity.name.enum",
+        "constant.language",
+        "support.constant",
+      ],
+      settings: {
+        foreground: "#fde68a",
+      },
+    },
+    {
+      name: "Flow control keywords",
+      scope: [
         "keyword.operator.word",
         "keyword.operator.new",
         "variable.language.super",
-        "support.type.primitive",
-        "storage.type",
-        "storage.modifier",
+        "variable.language.this",
+        "variable.language.self",
+        "constant.language.null",
+        "constant.language.undefined",
+        "constant.language.boolean",
         // include punctuation like $ and @ if they're part of the keyword
         "punctuation.definition.keyword",
+        // leading punctuation like $this in PHP
+        "variable.language.this punctuation.definition.variable",
+        "keyword.control.directive",
+        "punctuation.definition.directive",
       ],
       settings: {
-        foreground: palette.mauve,
-        fontStyle: "",
+        foreground: "#F7768E",
+        fontStyle: "italic bold",
       },
     },
     {
-      scope: "entity.name.tag.documentation",
+      name: "Tags",
+      scope: "entity.name.tag",
       settings: {
-        foreground: palette.mauve,
+        foreground: "#fda4af",
+        fontStyle: "bold",
       },
     },
     {
-      name: "Punctuation",
+      name: "Keywords",
       scope: [
+        "token.storage",
+        "storage",
+        "keyword",
+        "keyword.control",
         "keyword.operator",
+        "keyword.operator.new",
+        "keyword.operator.expression.delete",
+        "keyword.operator.expression.in",
+        "keyword.operator.expression.of",
+        "keyword.operator.expression.instanceof",
+        "keyword.operator.expression.typeof",
+        "keyword.operator.expression.void",
+        "keyword.operator.expression.keyof",
+        "keyword.operator.expression.import",
+        "keyword.operator.less",
+        "keyword.operator.module",
+        "keyword.operator.assignment",
+        "keyword.operator.assignment.compound",
+        "keyword.operator.expression.instanceof",
+        "keyword.operator.ternary",
+        "keyword.operator.optional",
+        "keyword.operator.logical",
+        "keyword.operator.channel",
+        "keyword.operator.bitwise",
+        "keyword.operator.arithmetic",
+        "keyword.operator.comparison",
+        "keyword.operator.decrement",
+        "keyword.operator.increment",
+        "keyword.operator.relational",
+        "keyword.operator.delete",
+        "support.type.object.dom",
         "punctuation.accessor",
         "punctuation.definition.generic",
         "meta.function.closure punctuation.section.parameters",
@@ -119,20 +181,33 @@ export default function tokens(context: ThemeContext): TextmateColors {
         "punctuation.separator.key-value",
       ],
       settings: {
-        foreground: palette.teal,
+        foreground: "#c084fc",
+        fontStyle: "italic",
+      },
+    },
+    {
+      name: "Punctuation",
+      scope: [
+        "punctuation.separator",
+        "punctuation.accessor",
+        "punctuation.definition.generic",
+      ],
+      settings: {
+        foreground: "#f4f4f5",
       },
     },
     {
       scope: [
         "entity.name.function",
         "meta.function-call.method",
-        "support.function",
         "support.function.misc",
         "variable.function",
+        "support.function.builtin",
+        "keyword.other.special-method",
+        "support.function",
       ],
       settings: {
-        foreground: palette.blue,
-        fontStyle: "italic",
+        foreground: "#60a5fa",
       },
     },
     {
@@ -145,16 +220,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
         "entity.name.struct",
       ],
       settings: {
-        foreground: palette.yellow,
-        fontStyle: "italic",
-      },
-    },
-    {
-      name: "Enum",
-      scope: "entity.name.enum",
-      settings: {
-        foreground: palette.yellow,
-        fontStyle: "italic",
+        foreground: "#fde68a",
       },
     },
     {
@@ -164,7 +230,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
         "variable.other.enummember",
       ],
       settings: {
-        foreground: palette.teal,
+        foreground: "#c084fc",
       },
     },
     {
@@ -183,8 +249,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
         "entity.name.type",
       ],
       settings: {
-        foreground: palette.yellow,
-        fontStyle: "italic",
+        foreground: "#fde68a",
       },
     },
     {
@@ -197,81 +262,77 @@ export default function tokens(context: ThemeContext): TextmateColors {
         "punctuation.decorator",
       ],
       settings: {
-        foreground: palette.peach,
+        foreground: "#c695c6",
       },
     },
     {
       scope: ["variable.parameter", "meta.function.parameters"],
       settings: {
-        foreground: palette.maroon,
-        fontStyle: "italic",
+        foreground: "#7dd3fc",
       },
     },
     {
-      name: "Built-ins",
-      scope: ["constant.language", "support.function.builtin"],
+      scope: "entity.other.attribute-name",
       settings: {
-        foreground: palette.red,
+        foreground: "#ffedd5",
       },
     },
-    {
-      scope: "entity.other.attribute-name.documentation",
-      settings: {
-        foreground: palette.red,
-      },
-    },
-    {
-      name: "Preprocessor directives",
-      scope: ["keyword.control.directive", "punctuation.definition.directive"],
-      settings: {
-        foreground: palette.yellow,
-      },
-    },
-    {
-      name: "Type parameters",
-      scope: "punctuation.definition.typeparameters",
-      settings: {
-        foreground: palette.sky,
-      },
-    },
+    // {
+    //   name: "Type parameters",
+    //   scope: "punctuation.definition.typeparameters",
+    //   settings: {
+    //     foreground: palette.sky,
+    //   },
+    // },
     {
       name: "Namespaces",
       scope: "entity.name.namespace",
       settings: {
-        foreground: palette.yellow,
+        foreground: "#fde68a",
       },
     },
     {
       name: "Property names (left hand assignments in json/yaml/css)",
-      scope: "support.type.property-name.css",
+      scope: [
+        "support.type.property-name",
+        "support.type.property-name.css",
+        "support.type.property-name.scss",
+        "support.type.property-name.json",
+      ],
       settings: {
-        foreground: palette.blue,
-        fontStyle: "",
+        foreground: "#7dd3fc",
       },
     },
     {
-      name: "This/Self keyword",
-      scope: [
-        "variable.language.this",
-        // leading punctuation like $this in PHP
-        "variable.language.this punctuation.definition.variable",
-      ],
+      name: "Property constant values",
+      scope: "support.constant.property-value",
       settings: {
-        foreground: palette.red,
+        foreground: "#fde68a",
       },
     },
     {
       name: "Object properties",
       scope: "variable.object.property",
       settings: {
-        foreground: palette.text,
+        foreground: "#6ee7b7",
       },
     },
     {
       name: "String template interpolation",
       scope: ["string.template variable", "string variable"],
       settings: {
-        foreground: palette.text,
+        foreground: "#fde68a",
+      },
+    },
+    {
+      name: "String interpolation",
+      scope: [
+        "punctuation.definition.template-expression.begin",
+        "punctuation.definition.template-expression.end",
+        "punctuation.section.embedded",
+      ],
+      settings: {
+        foreground: "#A1887F",
       },
     },
     {

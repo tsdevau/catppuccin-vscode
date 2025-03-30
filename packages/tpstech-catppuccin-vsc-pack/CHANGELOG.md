@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vsc-pack-v1.0.2...tpstech-catppuccin-vsc-pack-v1.1.0) (2025-03-30)
+
+
+### Features
+
+* **packages:** rename to tpstech across all packages ([27ae270](https://github.com/tsdevau/catppuccin-vscode/commit/27ae2708cd6e1a8c7cd33a2c57b7393ce2c41598))
+
 ## [1.0.2](https://github.com/catppuccin/vscode/compare/catppuccin-vsc-pack-v1.0.1...catppuccin-vsc-pack-v1.0.2) (2024-03-10)
 
 

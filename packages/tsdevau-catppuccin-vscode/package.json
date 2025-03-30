@@ -1,18 +1,16 @@
 {
-  "name": "@catppuccin/vscode",
+  "name": "tsdevau-catppuccin-vscode",
   "version": "3.17.0",
-  "description": "🦌 Soothing pastel theme for VSCode, NPM version",
+  "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
   "license": "MIT",
   "type": "module",
   "publishConfig": {
-    "access": "public",
-    "provenance": true,
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/catppuccin/vscode.git",
-    "directory": "packages/catppuccin-vscode"
+    "url": "https://github.com/tsdevau/catppuccin-vscode.git",
+    "directory": "packages/tsdevau-catppuccin-vscode"
   },
   "files": [
     "dist/*",
@@ -37,7 +35,7 @@
   "devDependencies": {
     "@tsconfig/node22": "catalog:",
     "@types/node": "catalog:",
-    "catppuccin-vsc": "workspace:*",
+    "tsdevau-catppuccin-vsc": "workspace:*",
     "tsup": "catalog:",
     "typescript": "catalog:"
   },
@@ -47,13 +45,10 @@
   "scripts": {
     "build": "pnpm tsup",
     "compiled:pack": "pnpm pack",
-    "prepack": "pnpm --filter catppuccin-vsc core:build && pnpm build"
+    "prepack": "pnpm --filter tsdevau-catppuccin-vsc core:build && pnpm build"
   },
-  "homepage": "https://github.com/catppuccin/vscode/tree/main/packages/catppuccin-vscode#readme",
+  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
   "bugs": {
-    "url": "https://github.com/catppuccin/vscode/issues"
-  },
-  "sponsor": {
-    "url": "https://opencollective.com/catppuccin"
+    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
   }
 }

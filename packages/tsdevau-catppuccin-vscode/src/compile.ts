@@ -1,6 +1,6 @@
-import { ThemeOptions } from "catppuccin-vsc/src/types";
 import { FlavorName } from "@catppuccin/palette";
-import { compileTheme, defaultOptions } from "catppuccin-vsc/src/theme";
+import { compileTheme, defaultOptions } from "tsdevau-catppuccin-vsc/src/theme";
+import { ThemeOptions } from "tsdevau-catppuccin-vsc/src/types";
 
 /**
  * Compiles the Catppuccin for VSCode theme with optional custom overrides.
@@ -38,6 +38,6 @@ export const compile = (
   // like in the original file, we need to shim the name for the Shiki theme
   return {
     ...compiled,
-    name: `catppuccin-${flavor}`,
+    name: `tsdevau-catppuccin-${flavor}`,
   };
 };

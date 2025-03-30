@@ -153,7 +153,7 @@
           "scope": "application",
           "type": "boolean",
           "default": true,
-          "markdownDescription": "Controls whether to sync the currently active Catppuccin flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)"
+          "markdownDescription": "Controls whether to sync the currently active tsdevau-Catppuccin flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)"
         }
       }
     }
@@ -192,5 +192,5 @@
     "core:watch": "tsx watch build.ts --dev",
     "schema:ui": "tsx src/hooks/updateSchemas.ts"
   },
-  "homepage": "https://github.com/tsdevau/catppuccin-vscode#readme"
+  "homepage": "https://github.com/tsdevau/catppuccin-vscode"
 }

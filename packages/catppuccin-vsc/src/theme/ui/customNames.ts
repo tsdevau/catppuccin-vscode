@@ -1,5 +1,5 @@
-import type { ThemeContext, ColorName } from "@/types";
 import { opacity } from "@/theme/utils";
+import type { ColorName, ThemeContext } from "@/types";
 import { flavors } from "@catppuccin/palette";
 
 type CustomNamedColors = Record<string, string>;
@@ -9,7 +9,7 @@ const ctpColors = new Set(Object.keys(flavors.mocha.colors));
 class CustomUIColorError extends Error {
   constructor(key: string, value: string, message = "") {
     super(
-      `Invalid value: "${value}" for key "${key}" in "catppuccin.customUIColors".\n${message}`,
+      `Invalid value: "${value}" for key "${key}" in "tsdevau-catppuccin.customUIColors".\n${message}`,
     );
     this.name = "CustomUIColorError";
   }

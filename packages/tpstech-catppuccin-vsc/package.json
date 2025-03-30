@@ -5,7 +5,7 @@
   "displayName": "Catppuccin by tpsTech for VSCode",
   "publisher": "tpsTech",
   "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
-  "version": "3.17.1",
+  "version": "3.18.0",
   "type": "module",
   "engines": {
     "vscode": "^1.80.0",

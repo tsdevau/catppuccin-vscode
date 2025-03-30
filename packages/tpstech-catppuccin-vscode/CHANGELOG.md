@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.18.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vscode-v3.17.1...tpstech-catppuccin-vscode-v3.18.0) (2025-03-30)
+
+
+### Features
+
+* **packages:** rename to tpstech across all packages ([27ae270](https://github.com/tsdevau/catppuccin-vscode/commit/27ae2708cd6e1a8c7cd33a2c57b7393ce2c41598))
+
 ## [3.17.1](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vscode-v3.17.0...tpstech-catppuccin-vscode-v3.17.1) (2025-03-30)
 
 

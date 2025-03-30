@@ -1,40 +1,36 @@
 {
   "name": "@tsdevau/catppuccin-vscode",
   "private": true,
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tsdevau/catppuccin-vscode.git",
     "directory": "."
   },
-  "bugs": {
-    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
+  "license": "MIT",
+  "scripts": {
+    "g:typecheck": "tsc --noEmit -p packages/tpstech-catppuccin-vsc",
+    "postinstall": "pnpm --filter tpstech-catppuccin-vscode compiled:pack",
+    "lint": "eslint . --ext .ts \"$@\" && pnpm g:typecheck"
   },
   "lint-staged": {
     "*.ts": "pnpm eslint --cache --fix",
     "*.{ts,json,md}": "pnpm prettier --write"
   },
-  "scripts": {
-    "g:typecheck": "tsc --noEmit -p packages/tpstech-catppuccin-vsc && tsc --noEmit -p packages/tpstech-catppuccin-vsc-storybook",
-    "lint": "eslint . --ext .ts \"$@\" && pnpm g:typecheck",
-    "postinstall": "pnpm --filter tpstech-catppuccin-vscode compiled:pack"
-  },
-  "packageManager": "pnpm@10.7.0",
-  "engines": {
-    "node": ">=20.0.0"
-  },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
-    "eslint-config-prettier": "^10.0.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-unicorn": "^52.0.0",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
     "@tsconfig/node22": "catalog:",
     "@types/node": "catalog:",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
     "@vscode/vsce": "catalog:",
     "eslint": "catalog:",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.5",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-packagejson": "^2.5.10",
     "tsup": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"
@@ -43,5 +39,9 @@
     "keytar": {
       "built": false
     }
+  },
+  "packageManager": "pnpm@10.7.0",
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

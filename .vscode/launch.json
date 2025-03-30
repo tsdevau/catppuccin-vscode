@@ -11,12 +11,8 @@
       "name": "Debug Extension",
       "type": "extensionHost",
       "request": "launch",
-      "args": [
-        "--extensionDevelopmentPath=${workspaceFolder}/packages/tpstech-catppuccin-vsc"
-      ],
-      "outFiles": [
-        "${workspaceFolder}/packages/tpstech-catppuccin-vsc/dist/*.js"
-      ]
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/packages/tpstech-catppuccin-vsc"],
+      "outFiles": ["${workspaceFolder}/packages/tpstech-catppuccin-vsc/dist/*.js"]
     }
   ],
   "compounds": [

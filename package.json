@@ -15,9 +15,9 @@
     "*.{ts,json,md}": "pnpm prettier --write"
   },
   "scripts": {
-    "g:typecheck": "tsc --noEmit -p packages/tsdevau-catppuccin-vsc && tsc --noEmit -p packages/tsdevau-catppuccin-vsc-storybook",
+    "g:typecheck": "tsc --noEmit -p packages/tpstech-catppuccin-vsc && tsc --noEmit -p packages/tpstech-catppuccin-vsc-storybook",
     "lint": "eslint . --ext .ts \"$@\" && pnpm g:typecheck",
-    "postinstall": "pnpm --filter tsdevau-catppuccin-vscode compiled:pack"
+    "postinstall": "pnpm --filter tpstech-catppuccin-vscode compiled:pack"
   },
   "packageManager": "pnpm@10.7.0",
   "engines": {

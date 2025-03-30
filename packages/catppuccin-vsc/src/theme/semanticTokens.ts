@@ -4,11 +4,26 @@ export const getSemanticTokens = (context: ThemeContext): SemanticTokens => {
   const { palette } = context;
 
   return {
-    enumMember: { foreground: palette.teal },
-    selfKeyword: { foreground: palette.red },
-    boolean: { foreground: palette.peach },
-    number: { foreground: palette.peach },
-    "variable.defaultLibrary": { foreground: palette.maroon },
+    enumMember: { foreground: "#c084fc" },
+    "variable.constant": {
+      foreground: "#fde68a",
+    },
+    "variable.defaultLibrary": {
+      foreground: "#fde6a0",
+    },
+    selfKeyword: {
+      foreground: "#F7768E",
+      fontStyle: "italic bold",
+    },
+    boolean: {
+      foreground: "#F7768E",
+      fontStyle: "italic bold",
+    },
+    number: { foreground: "#FF8A65" },
+    "token.debug-token": { foreground: "#c084fc" },
+    "token.error-token": { foreground: "#f87171" },
+    "token.warn-token": { foreground: "#fde68a" },
+    "token.info-token": { foreground: "#60a5fa" },
 
     // Python types
     "class:python": { foreground: palette.yellow },
@@ -16,16 +31,16 @@ export const getSemanticTokens = (context: ThemeContext): SemanticTokens => {
     "variable.typeHint:python": { foreground: palette.yellow },
     "function.decorator:python": { foreground: palette.peach },
 
-    // ignore `const`s being peach in JS & TS
-    "variable.readonly:javascript": { foreground: palette.text },
-    "variable.readonly:typescript": { foreground: palette.text },
-    "property.readonly:javascript": { foreground: palette.text },
-    "property.readonly:typescript": { foreground: palette.text },
-    // ditto for React
-    "variable.readonly:javascriptreact": { foreground: palette.text },
-    "variable.readonly:typescriptreact": { foreground: palette.text },
-    "property.readonly:javascriptreact": { foreground: palette.text },
-    "property.readonly:typescriptreact": { foreground: palette.text },
+    // // ignore `const`s being peach in JS & TS
+    // "variable.readonly:javascript": { foreground: palette.text },
+    // "variable.readonly:typescript": { foreground: palette.text },
+    // "property.readonly:javascript": { foreground: palette.text },
+    // "property.readonly:typescript": { foreground: palette.text },
+    // // ditto for React
+    // "variable.readonly:javascriptreact": { foreground: palette.text },
+    // "variable.readonly:typescriptreact": { foreground: palette.text },
+    // "property.readonly:javascriptreact": { foreground: palette.text },
+    // "property.readonly:typescriptreact": { foreground: palette.text },
 
     // Scala, also dealing with constants
     "variable.readonly:scala": { foreground: palette.text },

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       force-release-theme:
-        description: "Force a release of tsdevau-catppuccin-vsc"
+        description: "Force a release of tpstech-catppuccin-vsc"
         default: false
         type: boolean
       rev:
@@ -14,11 +14,11 @@ on:
         default: ""
         type: string
       force-release-theme-tag:
-        description: "The version to release tsdevau-catppuccin-vsc as"
+        description: "The version to release tpstech-catppuccin-vsc as"
         default: ""
         type: string
       force-release-pack:
-        description: "Force a release of tsdevau-catppuccin-vsc-pack"
+        description: "Force a release of tpstech-catppuccin-vsc-pack"
         default: false
         type: boolean
       # force-release-npm:
@@ -42,9 +42,9 @@ jobs:
         id: release
 
     outputs:
-      theme_release: ${{ github.event.inputs.force-release-theme == 'true' || steps.release.outputs['packages/tsdevau-catppuccin-vsc--release_created'] == 'true' }}
-      theme_tag: ${{ github.event.inputs.force-release-theme-tag || steps.release.outputs['packages/tsdevau-catppuccin-vsc--tag_name'] }}
-      pack_release: ${{ github.event.inputs.force-release-pack == 'true' || steps.release.outputs['packages/tsdevau-catppuccin-vsc-pack--release_created'] == 'true' }}
+      theme_release: ${{ github.event.inputs.force-release-theme == 'true' || steps.release.outputs['packages/tpstech-catppuccin-vsc--release_created'] == 'true' }}
+      theme_tag: ${{ github.event.inputs.force-release-theme-tag || steps.release.outputs['packages/tpstech-catppuccin-vsc--tag_name'] }}
+      pack_release: ${{ github.event.inputs.force-release-pack == 'true' || steps.release.outputs['packages/tpstech-catppuccin-vsc-pack--release_created'] == 'true' }}
       # npm_release: ${{ github.event.inputs.force-release-npm == 'true' || steps.release.outputs['packages/catppuccin-vscode--release_created'] == 'true' }}
 
   release-vscode:
@@ -69,15 +69,15 @@ jobs:
 
       - name: Build VSCode
         id: build-vscode
-        run: pnpm --filter tsdevau-catppuccin-vsc core:build
+        run: pnpm --filter tpstech-catppuccin-vsc core:build
 
       - name: Publish to Visual Studio Marketplace
-        working-directory: ./packages/tsdevau-catppuccin-vsc
+        working-directory: ./packages/tpstech-catppuccin-vsc
         run: |
           npx @vscode/vsce publish --pat "${{ secrets.VSCE_PAT }}" --packagePath "${{ steps.build-vscode.outputs.vsixPath }}"
 
       - name: Publish to Open VSX Registry
-        working-directory: ./packages/tsdevau-catppuccin-vsc
+        working-directory: ./packages/tpstech-catppuccin-vsc
         # continue even if OpenVSX fails
         # -> see https://github.com/catppuccin/vscode/issues/51
         continue-on-error: true
@@ -86,11 +86,11 @@ jobs:
           npx ovsx publish --pat "${{ secrets.OVSX_PAT }}" --packagePath "${{ steps.build-vscode.outputs.vsixPath }}"
 
       - name: Add files to GH Release
-        working-directory: ./packages/tsdevau-catppuccin-vsc
+        working-directory: ./packages/tpstech-catppuccin-vsc
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload ${{ needs.release-please.outputs.theme_tag }} tsdevau-catppuccin-*.vsix
+          gh release upload ${{ needs.release-please.outputs.theme_tag }} tpstech-catppuccin-*.vsix
 
   release-pack:
     runs-on: ubuntu-latest
@@ -106,21 +106,21 @@ jobs:
           cache: pnpm
       - run: pnpm i --frozen-lockfile
 
-      - run: pnpm --filter tsdevau-catppuccin-vsc-pack pack:build
+      - run: pnpm --filter tpstech-catppuccin-vsc-pack pack:build
 
       - name: Publish to Visual Studio Marketplace
-        working-directory: ./packages/tsdevau-catppuccin-vsc-pack
+        working-directory: ./packages/tpstech-catppuccin-vsc-pack
         run: |
-          npx @vscode/vsce publish --pat "${{ secrets.VSCE_PAT }}" --packagePath ./tsdevau-catppuccin-vsc-pack.vsix
+          npx @vscode/vsce publish --pat "${{ secrets.VSCE_PAT }}" --packagePath ./tpstech-catppuccin-vsc-pack.vsix
 
       - name: Publish to Open VSX Registry
-        working-directory: ./packages/tsdevau-catppuccin-vsc-pack
+        working-directory: ./packages/tpstech-catppuccin-vsc-pack
         # continue even if OpenVSX fails
         # -> see https://github.com/catppuccin/vscode/issues/51
         continue-on-error: true
         timeout-minutes: 10
         run: |
-          npx ovsx publish --pat "${{ secrets.OVSX_PAT }}" --packagePath ./tsdevau-catppuccin-vsc-pack.vsix
+          npx ovsx publish --pat "${{ secrets.OVSX_PAT }}" --packagePath ./tpstech-catppuccin-vsc-pack.vsix
 
   # release-npm:
   #   permissions:

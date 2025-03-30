@@ -1,11 +1,11 @@
 {
   "bootstrap-sha": "55b3e5d6248eb201c0e16424ce6f345757e94bad",
   "packages": {
-    "packages/tsdevau-catppuccin-vsc": {
-      "component": "tsdevau-catppuccin-vsc"
+    "packages/tpstech-catppuccin-vsc": {
+      "component": "tpstech-catppuccin-vsc"
     },
-    "packages/tsdevau-catppuccin-vsc-pack": {
-      "component": "tsdevau-catppuccin-vsc-pack",
+    "packages/tpstech-catppuccin-vsc-pack": {
+      "component": "tpstech-catppuccin-vsc-pack",
       "changelog-sections": [
         { "type": "feat", "section": "Features" },
         { "type": "fix", "section": "Bug Fixes" },
@@ -20,15 +20,15 @@
         { "type": "ci", "section": "Continuous Integration", "hidden": true }
       ]
     },
-    "packages/tsdevau-catppuccin-vscode": {
-      "component": "tsdevau-catppuccin-vscode"
+    "packages/tpstech-catppuccin-vscode": {
+      "component": "tpstech-catppuccin-vscode"
     }
   },
   "plugins": [
     {
       "type": "linked-versions",
       "groupName": "theme",
-      "components": ["tsdevau-catppuccin-vsc", "tsdevau-catppuccin-vscode"]
+      "components": ["tpstech-catppuccin-vsc", "tpstech-catppuccin-vscode"]
     }
   ],
   "release-type": "node",

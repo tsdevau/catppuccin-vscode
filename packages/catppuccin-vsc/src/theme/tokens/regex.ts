@@ -11,21 +11,21 @@ const tokens = (context: ThemeContext): TextmateColors => {
         "string.regexp punctuation.definition.string.end",
       ],
       settings: {
-        foreground: palette.pink,
+        foreground: "#6ee7b7",
       },
     },
     {
       name: "Regex anchors (^, $)",
       scope: "keyword.control.anchor.regexp",
       settings: {
-        foreground: palette.mauve,
+        foreground: "#c084fc",
       },
     },
     {
-      name: "Regex regular string match",
-      scope: "string.regexp.ts",
+      name: "Regex regular string",
+      scope: "string.regexp",
       settings: {
-        foreground: palette.text,
+        foreground: "#f472b6",
       },
     },
     {
@@ -49,7 +49,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
       name: "Regex character classes (\\d, \\w, \\s)",
       scope: "constant.other.character-class.regexp",
       settings: {
-        foreground: palette.pink,
+        foreground: "#7dd3fc",
       },
     },
     {
@@ -63,14 +63,14 @@ const tokens = (context: ThemeContext): TextmateColors => {
       name: "Regex quantifier",
       scope: "keyword.operator.quantifier.regexp",
       settings: {
-        foreground: palette.teal,
+        foreground: "#fde68a",
       },
     },
     {
       name: "Regex constant/numeric",
       scope: "constant.character.numeric.regexp",
       settings: {
-        foreground: palette.peach,
+        foreground: "#FF8A65",
       },
     },
     {

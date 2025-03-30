@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.17.1](https://github.com/tsdevau/catppuccin-vscode/compare/tsdevau-catppuccin-vsc-v3.17.0...tsdevau-catppuccin-vsc-v3.17.1) (2025-03-30)
+
+
+### Bug Fixes
+
+* **build:** optimise build settings for production of fork release ([478618d](https://github.com/tsdevau/catppuccin-vscode/commit/478618d97bf53a6235f9b8dd87d4e15662aada28))
+
 ## [3.17.0](https://github.com/catppuccin/vscode/compare/catppuccin-vsc-v3.16.1...catppuccin-vsc-v3.17.0) (2025-03-28)
 
 

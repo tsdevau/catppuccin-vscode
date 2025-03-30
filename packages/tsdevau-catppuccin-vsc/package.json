@@ -5,7 +5,7 @@
   "displayName": "tsdevau-Catppuccin for VSCode",
   "publisher": "tsdevau",
   "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
-  "version": "3.17.0",
+  "version": "3.17.1",
   "type": "module",
   "engines": {
     "vscode": "^1.80.0",

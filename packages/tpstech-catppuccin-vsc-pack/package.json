@@ -1,36 +1,36 @@
 {
   "name": "tpstech-catppuccin-vsc-pack",
-  "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
-  "version": "1.1.0",
   "displayName": "Catppuccin by tpsTech Pack",
-  "publisher": "tpsTech",
-  "icon": "icon.png",
+  "version": "1.1.0",
   "private": true,
+  "description": "Combines a soothing pastel theme based on Catppuccin with adjusted syntax highlighting with Catppuccin Icons for VSCode",
+  "categories": [
+    "Extension Packs"
+  ],
+  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
+  "bugs": {
+    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tsdevau/catppuccin-vscode.git",
     "directory": "packages/tpstech-catppuccin-vsc-pack"
   },
-  "engines": {
-    "vscode": "^1.70.0",
-    "node": ">=20.0.0"
-  },
-  "categories": [
-    "Extension Packs"
-  ],
-  "extensionPack": [
-    "Catppuccin.catppuccin-vsc",
-    "Catppuccin.catppuccin-vsc-icons"
-  ],
-  "devDependencies": {
-    "@vscode/vsce": "catalog:"
-  },
+  "license": "MIT",
+  "publisher": "tpsTech",
   "scripts": {
     "pack:build": "vsce package --no-dependencies --out tpstech-catppuccin-vsc-pack.vsix"
   },
-  "license": "MIT",
-  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
-  "bugs": {
-    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
-  }
+  "devDependencies": {
+    "@vscode/vsce": "catalog:"
+  },
+  "extensionPack": [
+    "Catppuccin.catppuccin-vsc-icons",
+    "tpstech.tpstech-catppuccin-vsc"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "vscode": "^1.70.0"
+  },
+  "icon": "icon.png"
 }

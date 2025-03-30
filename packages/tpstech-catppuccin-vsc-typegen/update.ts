@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import path from "node:path";
-import { writeFileSync } from "node:fs";
-import { compile, JSONSchema } from "json-schema-to-typescript";
+import { compile, JSONSchema } from "json-schema-to-typescript"
+import { writeFileSync } from "node:fs"
+import path from "node:path"
 
 // v1.98.2
 const vscodeSchemasRoot =
-  "https://raw.githubusercontent.com/ota-meshi/extract-vscode-schemas/bd18db29edb183a0d8b0b8250b22dbd4428a0da8/resources/vscode/schemas/";
+  "https://raw.githubusercontent.com/ota-meshi/extract-vscode-schemas/bd18db29edb183a0d8b0b8250b22dbd4428a0da8/resources/vscode/schemas/"
 
 const bannerComment = `/**
  * This file was automatically generated.
  * DO NOT MODIFY IT BY HAND.
  * Instead, run \`pnpm --filter @catppuccin/vsc-typegen typegen:update\` to regenerate this file.
- */`;
+ */`
 
 const mappings = [
   // json-schema-to-typescript breaks on new schemas because of an internal
@@ -39,27 +39,24 @@ const mappings = [
     kind: "jsonschema",
   },
   {
-    schema:
-      "https://raw.githubusercontent.com/usernamehw/vscode-error-lens/v3.24.0/package.json",
+    schema: "https://raw.githubusercontent.com/usernamehw/vscode-error-lens/v3.24.0/package.json",
     name: "ErrorLensColors",
     fname: "errorlens.d.ts",
     kind: "extension-packagejson",
   },
   {
-    schema:
-      "https://raw.githubusercontent.com/gitkraken/vscode-gitlens/v16.3.3/package.json",
+    schema: "https://raw.githubusercontent.com/gitkraken/vscode-gitlens/v16.3.3/package.json",
     name: "GitLensColors",
     fname: "gitlens.d.ts",
     kind: "extension-packagejson",
   },
   {
-    schema:
-      "https://github.com/microsoft/vscode-pull-request-github/raw/v0.106.0/package.json",
+    schema: "https://github.com/microsoft/vscode-pull-request-github/raw/v0.106.0/package.json",
     name: "GitHubPullRequestColors",
     fname: "github-pull-request.d.ts",
     kind: "extension-packagejson",
   },
-];
+]
 
 for (const { schema, name, fname, kind } of mappings) {
   fetch(schema)
@@ -70,31 +67,29 @@ for (const { schema, name, fname, kind } of mappings) {
           return compile(data as JSONSchema, name, {
             additionalProperties: false,
             bannerComment,
-          });
+          })
         }
         case "extension-packagejson": {
-          return fromVSIXColors(name, data);
+          return fromVSIXColors(name, data)
         }
         default: {
-          throw new Error(`Unknown kind: ${kind}`);
+          throw new Error(`Unknown kind: ${kind}`)
         }
       }
     })
-    .then((typeDefs) =>
-      writeFileSync(path.join(__dirname, "types", fname), typeDefs, "utf8"),
-    );
+    .then((typeDefs) => writeFileSync(path.join(__dirname, "types", fname), typeDefs, "utf8"))
 }
 
 const fromVSIXColors = (interfaceName: string, data: any) => {
   let content = `${bannerComment}
-export interface ${interfaceName} {`;
+export interface ${interfaceName} {`
   data.contributes.colors.map((color: any) => {
     content += `
   /**
    * ${color.description}
    */
   "${color.id}": string;
-`;
-  });
-  return content + "}\n";
-};
+`
+  })
+  return content + "}\n"
+}

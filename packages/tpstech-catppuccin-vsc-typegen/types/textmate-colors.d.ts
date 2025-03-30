@@ -98,30 +98,30 @@ export type _1 =
   | "variable.name"
   | "variable.other"
   | "variable.other.readwrite"
-  | "variable.parameter";
+  | "variable.parameter"
 export type TextmateColors = {
   /**
    * Description of the rule.
    */
-  name?: string;
+  name?: string
   /**
    * Scope selector against which this rule matches.
    */
-  scope?: _1 | _1[] | string[] | string;
-  settings: Settings;
-}[];
+  scope?: _1 | _1[] | string[] | string
+  settings: Settings
+}[]
 
 /**
  * Colors and styles for the token.
  */
 export interface Settings {
-  background?: string;
+  background?: string
   /**
    * Font style of the rule: 'italic', 'bold', 'underline', 'strikethrough' or a combination. The empty string unsets inherited settings.
    */
-  fontStyle?: string;
+  fontStyle?: string
   /**
    * Foreground color for the token.
    */
-  foreground?: string;
+  foreground?: string
 }

@@ -1,26 +1,26 @@
 {
   "name": "@catppuccin/vsc-typegen",
-  "license": "MIT",
   "private": true,
-  "devDependencies": {
-    "json-schema-to-typescript": "^15.0.4",
-    "tsx": "catalog:",
-    "typescript": "catalog:"
-  },
-  "scripts": {
-    "typegen:update": "tsx update.ts"
-  },
-  "engines": {
-    "node": ">=20.0.0"
+  "homepage": "https://github.com/catppuccin/vscode/tree/main/packages/catppuccin-vsc-typegen#readme",
+  "bugs": {
+    "url": "https://github.com/catppuccin/vscode/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/catppuccin/vscode.git",
     "directory": "packages/catppuccin-vsc-typegen"
   },
-  "homepage": "https://github.com/catppuccin/vscode/tree/main/packages/catppuccin-vsc-typegen#readme",
-  "bugs": {
-    "url": "https://github.com/catppuccin/vscode/issues"
+  "license": "MIT",
+  "scripts": {
+    "typegen:update": "tsx update.ts"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^15.0.4",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "sponsor": {
     "url": "https://opencollective.com/catppuccin"

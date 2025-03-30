@@ -19,23 +19,23 @@ const brackets = (context: ThemeContext): Record<BracketHLs, string> => {
 
   const styles = {
     rainbow: {
-      "editorBracketHighlight.foreground1": palette.red,
+      "editorBracketHighlight.foreground1": palette.sky,
       "editorBracketHighlight.foreground2": palette.peach,
-      "editorBracketHighlight.foreground3": palette.yellow,
+      "editorBracketHighlight.foreground3": palette.mauve,
       "editorBracketHighlight.foreground4": palette.green,
       "editorBracketHighlight.foreground5": palette.sapphire,
-      "editorBracketHighlight.foreground6": palette.mauve,
-      "editorBracketHighlight.unexpectedBracket.foreground": palette.maroon,
+      "editorBracketHighlight.foreground6": palette.blue,
+      "editorBracketHighlight.unexpectedBracket.foreground": palette.red,
     },
     dimmed: {
-      "editorBracketHighlight.foreground1": shade(palette.red, dimAmount),
+      "editorBracketHighlight.foreground1": shade(palette.sky, dimAmount),
       "editorBracketHighlight.foreground2": shade(palette.peach, dimAmount),
-      "editorBracketHighlight.foreground3": shade(palette.yellow, dimAmount),
+      "editorBracketHighlight.foreground3": shade(palette.mauve, dimAmount),
       "editorBracketHighlight.foreground4": shade(palette.green, dimAmount),
       "editorBracketHighlight.foreground5": shade(palette.sapphire, dimAmount),
-      "editorBracketHighlight.foreground6": shade(palette.mauve, dimAmount),
+      "editorBracketHighlight.foreground6": shade(palette.blue, dimAmount),
       "editorBracketHighlight.unexpectedBracket.foreground": shade(
-        palette.maroon,
+        palette.red,
         dimAmount,
       ),
     },
@@ -46,16 +46,16 @@ const brackets = (context: ThemeContext): Record<BracketHLs, string> => {
       "editorBracketHighlight.foreground4": palette.overlay1,
       "editorBracketHighlight.foreground5": palette.overlay0,
       "editorBracketHighlight.foreground6": palette.surface2,
-      "editorBracketHighlight.unexpectedBracket.foreground": palette.maroon,
+      "editorBracketHighlight.unexpectedBracket.foreground": palette.red,
     },
     neovim: {
-      "editorBracketHighlight.foreground1": palette.red,
+      "editorBracketHighlight.foreground1": palette.sky,
       "editorBracketHighlight.foreground2": palette.teal,
-      "editorBracketHighlight.foreground3": palette.yellow,
+      "editorBracketHighlight.foreground3": palette.mauve,
       "editorBracketHighlight.foreground4": palette.blue,
       "editorBracketHighlight.foreground5": palette.pink,
       "editorBracketHighlight.foreground6": palette.flamingo,
-      "editorBracketHighlight.unexpectedBracket.foreground": palette.maroon,
+      "editorBracketHighlight.unexpectedBracket.foreground": palette.red,
     },
   };
 

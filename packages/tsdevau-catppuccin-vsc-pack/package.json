@@ -1,0 +1,36 @@
+{
+  "name": "tsdevau-catppuccin-vsc-pack",
+  "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
+  "version": "1.0.2",
+  "displayName": "tsdevau-Catppuccin Pack",
+  "publisher": "tsdevau",
+  "icon": "icon.png",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsdevau/catppuccin-vscode.git",
+    "directory": "packages/tsdevau-catppuccin-vsc-pack"
+  },
+  "engines": {
+    "vscode": "^1.70.0",
+    "node": ">=20.0.0"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [
+    "Catppuccin.catppuccin-vsc",
+    "Catppuccin.catppuccin-vsc-icons"
+  ],
+  "devDependencies": {
+    "@vscode/vsce": "catalog:"
+  },
+  "scripts": {
+    "pack:build": "vsce package --no-dependencies --out tsdevau-catppuccin-vsc-pack.vsix"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
+  "bugs": {
+    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
+  }
+}

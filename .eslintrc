@@ -20,5 +20,7 @@
     "unicorn/prefer-module": "off",
     "unicorn/prefer-top-level-await": "off",
     "unicorn/import-style": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
   },
 }

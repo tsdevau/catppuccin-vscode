@@ -2,22 +2,17 @@
   "name": "tpstech-catppuccin-vscode",
   "version": "3.18.0",
   "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
-  "license": "MIT",
-  "type": "module",
-  "publishConfig": {
-    "access": "public"
+  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
+  "bugs": {
+    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/tsdevau/catppuccin-vscode.git",
     "directory": "packages/tpstech-catppuccin-vscode"
   },
-  "files": [
-    "dist/*",
-    "themes/*"
-  ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -28,6 +23,17 @@
       "import": "./themes/*.json",
       "require": "./themes/*.json"
     }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "files": [
+    "dist/*",
+    "themes/*"
+  ],
+  "scripts": {
+    "build": "pnpm tsup",
+    "compiled:pack": "pnpm pack",
+    "prepack": "pnpm --filter tpstech-catppuccin-vsc core:build && pnpm build"
   },
   "dependencies": {
     "@catppuccin/palette": "catalog:"
@@ -42,13 +48,7 @@
   "engines": {
     "node": ">=22.0.0"
   },
-  "scripts": {
-    "build": "pnpm tsup",
-    "compiled:pack": "pnpm pack",
-    "prepack": "pnpm --filter tpstech-catppuccin-vsc core:build && pnpm build"
-  },
-  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
-  "bugs": {
-    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
+  "publishConfig": {
+    "access": "public"
   }
 }

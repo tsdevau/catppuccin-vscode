@@ -22,7 +22,7 @@ export const accents = [
 
 const configuration = (version: string) => {
   return {
-    title: "Catppuccin",
+    title: "tsdevau Catppuccin",
     properties: {
       "catppuccin.boldKeywords": {
         scope: "application",
@@ -102,7 +102,7 @@ const configuration = (version: string) => {
         type: "boolean",
         default: true,
         markdownDescription:
-          "Controls whether to sync the currently active Catppuccin flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)",
+          "Controls whether to sync the currently active tsdevau-Catppuccin flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)",
       },
     },
   };
@@ -139,4 +139,4 @@ const updatePackageJson = async () => {
     });
 };
 
-export { updatePackageJson, readPackageJsonVersion };
+export { readPackageJsonVersion, updatePackageJson };

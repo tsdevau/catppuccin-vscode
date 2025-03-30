@@ -3,8 +3,8 @@ import { createVSIX } from "@vscode/vsce";
 import { build } from "tsup";
 import { getFlag } from "type-flag";
 
-import { updatePackageJson, readPackageJsonVersion } from "@/hooks/packageJson";
 import generateThemes from "@/hooks/generateThemes";
+import { readPackageJsonVersion, updatePackageJson } from "@/hooks/packageJson";
 
 const development = getFlag("--dev", Boolean);
 
@@ -27,7 +27,7 @@ await build({
   target: "node16",
 });
 
-const packagePath = `catppuccin-vsc-${packageJsonVersion}.vsix`;
+const packagePath = `tsdevau-catppuccin-vsc-${packageJsonVersion}.vsix`;
 
 await createVSIX({ dependencies: false, packagePath });
 

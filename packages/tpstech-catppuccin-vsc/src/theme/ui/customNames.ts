@@ -9,7 +9,7 @@ const ctpColors = new Set(Object.keys(flavors.mocha.colors));
 class CustomUIColorError extends Error {
   constructor(key: string, value: string, message = "") {
     super(
-      `Invalid value: "${value}" for key "${key}" in "tsdevau-catppuccin.customUIColors".\n${message}`,
+      `Invalid value: "${value}" for key "${key}" in "tpstech-catppuccin.customUIColors".\n${message}`,
     );
     this.name = "CustomUIColorError";
   }

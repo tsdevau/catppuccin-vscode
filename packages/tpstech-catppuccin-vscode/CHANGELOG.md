@@ -1,11 +1,11 @@
 # Changelog
 
-## [3.17.1](https://github.com/tsdevau/catppuccin-vscode/compare/tsdevau-catppuccin-vscode-v3.17.0...tsdevau-catppuccin-vscode-v3.17.1) (2025-03-30)
+## [3.17.1](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vscode-v3.17.0...tpstech-catppuccin-vscode-v3.17.1) (2025-03-30)
 
 
 ### Miscellaneous Chores
 
-* **tsdevau-catppuccin-vscode:** Synchronize theme versions
+* **tpstech-catppuccin-vscode:** Synchronize theme versions
 
 ## [3.17.0](https://github.com/catppuccin/vscode/compare/@catppuccin/vscode-v3.16.1...@catppuccin/vscode-v3.17.0) (2025-03-28)
 

@@ -41,7 +41,7 @@ const filterObject = <T extends object>(
 };
 
 export const promptToReload = (trigger: UpdateTrigger) => {
-  const message = `tsdevau-catppuccin: ${trigger} - Reload required.`;
+  const message = `tpstech-catppuccin: ${trigger} - Reload required.`;
   const action = "Reload window";
   window.showInformationMessage(message, action).then((selectedAction) => {
     if (selectedAction === action) {
@@ -80,14 +80,14 @@ export const isFreshInstall = async (
   context: ExtensionContext,
 ): Promise<boolean | "error"> => {
   console.log(
-    "Checking if tsdevau-catppuccin is installed for the first time.",
+    "Checking if tpstech-catppuccin is installed for the first time.",
   );
   const flagUri = Uri.file(context.asAbsolutePath("themes/.flag"));
   if (await fileExists(flagUri)) {
-    console.log("tsdevau-catppuccin has been installed before.");
+    console.log("tpstech-catppuccin has been installed before.");
     return false;
   } else {
-    console.log("tsdevau-catppuccin is installed for the first time!");
+    console.log("tpstech-catppuccin is installed for the first time!");
     return workspace.fs.writeFile(flagUri, Buffer.from("")).then(
       () => true,
       () => "error",
@@ -96,18 +96,18 @@ export const isFreshInstall = async (
 };
 
 export const isDefaultConfig = (): boolean => {
-  console.log("Checking if tsdevau-catppuccin is using default config.");
+  console.log("Checking if tpstech-catppuccin is using default config.");
   const state =
     JSON.stringify(getConfiguration()) === JSON.stringify(defaultOptions);
   console.log(
-    `tsdevau-catppuccin is using ${state ? "default" : "custom"} config.`,
+    `tpstech-catppuccin is using ${state ? "default" : "custom"} config.`,
   );
 
   return state;
 };
 
 export const getConfiguration = (): ThemeOptions => {
-  const config = workspace.getConfiguration("tsdevau-catppuccin");
+  const config = workspace.getConfiguration("tpstech-catppuccin");
   const options = {
     accent: config.get<CatppuccinAccent>("accentColor"),
     boldKeywords: config.get<boolean>("boldKeywords"),
@@ -181,10 +181,10 @@ export const syncToIconPack = () => {
 
   // mapping the Catppuccin Theme names to the icon pack names
   const uiThemesToIconThemes = {
-    "tsdevau-catppuccin Latte": "catppuccin-latte",
-    "tsdevau-catppuccin Frappé": "catppuccin-frappe",
-    "tsdevau-catppuccin Macchiato": "catppuccin-macchiato",
-    "tsdevau-catppuccin Mocha": "catppuccin-mocha",
+    "tpstech-catppuccin Latte": "catppuccin-latte",
+    "tpstech-catppuccin Frappé": "catppuccin-frappe",
+    "tpstech-catppuccin Macchiato": "catppuccin-macchiato",
+    "tpstech-catppuccin Mocha": "catppuccin-mocha",
   };
 
   // check if the current editor theme is a Catppuccin theme

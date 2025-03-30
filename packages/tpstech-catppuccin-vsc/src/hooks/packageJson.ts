@@ -22,50 +22,52 @@ export const accents = [
 
 const configuration = (version: string) => {
   return {
-    title: "tsdevau-Catppuccin",
+    title: "Catppuccin by tpsTech",
     properties: {
-      "tsdevau-catppuccin.boldKeywords": {
+      "tpstech-catppuccin.boldKeywords": {
         scope: "application",
         type: "boolean",
         default: true,
         markdownDescription: "Controls whether to use **bold** for keywords.",
       },
-      "tsdevau-catppuccin.italicComments": {
+      "tpstech-catppuccin.italicComments": {
         scope: "application",
         type: "boolean",
         default: true,
         markdownDescription: "Controls whether to use *italics* for comments.",
       },
-      "tsdevau-catppuccin.italicKeywords": {
+      "tpstech-catppuccin.italicKeywords": {
         scope: "application",
         type: "boolean",
         default: true,
         markdownDescription: "Controls whether to use *italics* for keywords.",
       },
-      "tsdevau-catppuccin.colorOverrides": {
+      "tpstech-catppuccin.colorOverrides": {
         scope: "application",
         type: "object",
         default: {},
         markdownDescription:
           "Custom color overrides. Assign your own hex codes to palette colors. See [the docs](https://github.com/catppuccin/vscode#override-palette-colors) for reference.",
-        $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v${version}/packages/catppuccin-vsc/schemas/colorOverrides.schema.json`,
+        // $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v${version}/packages/catppuccin-vsc/schemas/colorOverrides.schema.json`,
+        $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.0/packages/catppuccin-vsc/schemas/colorOverrides.schema.json`,
       },
-      "tsdevau-catppuccin.customUIColors": {
+      "tpstech-catppuccin.customUIColors": {
         scope: "application",
         type: "object",
         default: {},
         markdownDescription:
           "Customize UI colors. Map `workbench.colorCustomizations` to palette colors. See [the docs](https://github.com/catppuccin/vscode#use-palette-colors-on-workbench-elements-ui) for reference.",
-        $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v${version}/packages/catppuccin-vsc/schemas/customUIColors.schema.json`,
+        // $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v${version}/packages/catppuccin-vsc/schemas/customUIColors.schema.json`,
+        $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.0/packages/catppuccin-vsc/schemas/customUIColors.schema.json`,
       },
-      "tsdevau-catppuccin.accentColor": {
+      "tpstech-catppuccin.accentColor": {
         scope: "application",
         type: "string",
         default: "mauve",
         description: "Controls which accent color to use.",
         enum: accents,
       },
-      "tsdevau-catppuccin.workbenchMode": {
+      "tpstech-catppuccin.workbenchMode": {
         scope: "application",
         type: "string",
         default: "default",
@@ -77,7 +79,7 @@ const configuration = (version: string) => {
           "A minimal look, using 1 shade of the base color.",
         ],
       },
-      "tsdevau-catppuccin.bracketMode": {
+      "tpstech-catppuccin.bracketMode": {
         scope: "application",
         type: "string",
         default: "rainbow",
@@ -90,19 +92,19 @@ const configuration = (version: string) => {
           "Uses the same bracket pair colors as our neovim port.",
         ],
       },
-      "tsdevau-catppuccin.extraBordersEnabled": {
+      "tpstech-catppuccin.extraBordersEnabled": {
         scope: "application",
         type: "boolean",
         default: false,
         description:
           "Controls whether borders should be enabled on some additional UI elements.",
       },
-      "tsdevau-catppuccin.syncWithIconPack": {
+      "tpstech-catppuccin.syncWithIconPack": {
         scope: "application",
         type: "boolean",
         default: true,
         markdownDescription:
-          "Controls whether to sync the currently active tsdevau-Catppuccin flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)",
+          "Controls whether to sync the currently active Catppuccin by tpsTech flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)",
       },
     },
   };

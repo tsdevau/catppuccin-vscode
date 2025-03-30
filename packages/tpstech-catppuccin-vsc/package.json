@@ -1,8 +1,8 @@
 {
-  "name": "tsdevau-catppuccin-vsc",
+  "name": "tpstech-catppuccin-vsc",
   "license": "MIT",
   "private": true,
-  "displayName": "tsdevau-Catppuccin for VSCode",
+  "displayName": "Catppuccin by tpsTech for VSCode",
   "publisher": "tpsTech",
   "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
   "version": "3.17.1",
@@ -32,62 +32,62 @@
   "contributes": {
     "themes": [
       {
-        "label": "tsdevau-Catppuccin Mocha",
+        "label": "Catppuccin by tpsTech Mocha",
         "uiTheme": "vs-dark",
         "path": "./themes/mocha.json"
       },
       {
-        "label": "tsdevau-Catppuccin Macchiato",
+        "label": "Catppuccin by tpsTech Macchiato",
         "uiTheme": "vs-dark",
         "path": "./themes/macchiato.json"
       },
       {
-        "label": "tsdevau-Catppuccin Frappé",
+        "label": "Catppuccin by tpsTech Frappé",
         "uiTheme": "vs-dark",
         "path": "./themes/frappe.json"
       },
       {
-        "label": "tsdevau-Catppuccin Latte",
+        "label": "Catppuccin by tpsTech Latte",
         "uiTheme": "vs",
         "path": "./themes/latte.json"
       }
     ],
     "configuration": {
-      "title": "tsdevau-Catppuccin",
+      "title": "Catppuccin by tpsTech",
       "properties": {
-        "tsdevau-catppuccin.boldKeywords": {
+        "tpstech-catppuccin.boldKeywords": {
           "scope": "application",
           "type": "boolean",
           "default": true,
           "markdownDescription": "Controls whether to use **bold** for keywords."
         },
-        "tsdevau-catppuccin.italicComments": {
+        "tpstech-catppuccin.italicComments": {
           "scope": "application",
           "type": "boolean",
           "default": true,
           "markdownDescription": "Controls whether to use *italics* for comments."
         },
-        "tsdevau-catppuccin.italicKeywords": {
+        "tpstech-catppuccin.italicKeywords": {
           "scope": "application",
           "type": "boolean",
           "default": true,
           "markdownDescription": "Controls whether to use *italics* for keywords."
         },
-        "tsdevau-catppuccin.colorOverrides": {
+        "tpstech-catppuccin.colorOverrides": {
           "scope": "application",
           "type": "object",
           "default": {},
           "markdownDescription": "Custom color overrides. Assign your own hex codes to palette colors. See [the docs](https://github.com/catppuccin/vscode#override-palette-colors) for reference.",
-          "$ref": "https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.1/packages/catppuccin-vsc/schemas/colorOverrides.schema.json"
+          "$ref": "https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.0/packages/catppuccin-vsc/schemas/colorOverrides.schema.json"
         },
-        "tsdevau-catppuccin.customUIColors": {
+        "tpstech-catppuccin.customUIColors": {
           "scope": "application",
           "type": "object",
           "default": {},
           "markdownDescription": "Customize UI colors. Map `workbench.colorCustomizations` to palette colors. See [the docs](https://github.com/catppuccin/vscode#use-palette-colors-on-workbench-elements-ui) for reference.",
-          "$ref": "https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.1/packages/catppuccin-vsc/schemas/customUIColors.schema.json"
+          "$ref": "https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.0/packages/catppuccin-vsc/schemas/customUIColors.schema.json"
         },
-        "tsdevau-catppuccin.accentColor": {
+        "tpstech-catppuccin.accentColor": {
           "scope": "application",
           "type": "string",
           "default": "mauve",
@@ -109,7 +109,7 @@
             "lavender"
           ]
         },
-        "tsdevau-catppuccin.workbenchMode": {
+        "tpstech-catppuccin.workbenchMode": {
           "scope": "application",
           "type": "string",
           "default": "default",
@@ -125,7 +125,7 @@
             "A minimal look, using 1 shade of the base color."
           ]
         },
-        "tsdevau-catppuccin.bracketMode": {
+        "tpstech-catppuccin.bracketMode": {
           "scope": "application",
           "type": "string",
           "default": "rainbow",
@@ -143,17 +143,17 @@
             "Uses the same bracket pair colors as our neovim port."
           ]
         },
-        "tsdevau-catppuccin.extraBordersEnabled": {
+        "tpstech-catppuccin.extraBordersEnabled": {
           "scope": "application",
           "type": "boolean",
           "default": false,
           "description": "Controls whether borders should be enabled on some additional UI elements."
         },
-        "tsdevau-catppuccin.syncWithIconPack": {
+        "tpstech-catppuccin.syncWithIconPack": {
           "scope": "application",
           "type": "boolean",
           "default": true,
-          "markdownDescription": "Controls whether to sync the currently active tsdevau-Catppuccin flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)"
+          "markdownDescription": "Controls whether to sync the currently active Catppuccin by tpsTech flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)"
         }
       }
     }
@@ -161,7 +161,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/tsdevau/catppuccin-vscode.git",
-    "directory": "packages/tsdevau-catppuccin-vsc"
+    "directory": "packages/tpstech-catppuccin-vsc"
   },
   "bugs": {
     "url": "https://github.com/tsdevau/catppuccin-vscode/issues"

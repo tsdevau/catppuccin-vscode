@@ -28,7 +28,7 @@ await build({
   target: "node16",
 });
 
-const packagePath = `tsdevau-catppuccin-vsc-${packageJsonVersion}.vsix`;
+const packagePath = `tpstech-catppuccin-vsc-${packageJsonVersion}.vsix`;
 
 await createVSIX({ dependencies: false, packagePath });
 

@@ -20,10 +20,10 @@ jobs:
         run: pnpm lint
 
       - name: Build
-        run: pnpm --filter catppuccin-vsc core:build
+        run: pnpm --filter tsdevau-catppuccin-vsc core:build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4
         with:
-          name: catppuccin-vsc-${{ github.sha }}
-          path: packages/catppuccin-vsc/catppuccin-*.vsix
+          name: tsdevau-catppuccin-vsc-${{ github.sha }}
+          path: packages/tsdevau-catppuccin-vsc/tsdevau-catppuccin-*.vsix

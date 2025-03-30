@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       force-release-theme:
-        description: "Force a release of catppuccin-vsc"
+        description: "Force a release of tsdevau-catppuccin-vsc"
         default: false
         type: boolean
       rev:
@@ -14,17 +14,17 @@ on:
         default: ""
         type: string
       force-release-theme-tag:
-        description: "The version to release catppuccin-vsc as"
+        description: "The version to release tsdevau-catppuccin-vsc as"
         default: ""
         type: string
       force-release-pack:
-        description: "Force a release of catppuccin-vsc-pack"
+        description: "Force a release of tsdevau-catppuccin-vsc-pack"
         default: false
         type: boolean
-      force-release-npm:
-        description: "Force a release of @catppuccin/vscode"
-        default: false
-        type: boolean
+      # force-release-npm:
+      #   description: "Force a release of @catppuccin/vscode"
+      #   default: false
+      #   type: boolean
 
 jobs:
   release-please:
@@ -42,10 +42,10 @@ jobs:
         id: release
 
     outputs:
-      theme_release: ${{ github.event.inputs.force-release-theme == 'true' || steps.release.outputs['packages/catppuccin-vsc--release_created'] == 'true' }}
-      theme_tag: ${{ github.event.inputs.force-release-theme-tag || steps.release.outputs['packages/catppuccin-vsc--tag_name'] }}
-      pack_release: ${{ github.event.inputs.force-release-pack == 'true' || steps.release.outputs['packages/catppuccin-vsc-pack--release_created'] == 'true' }}
-      npm_release: ${{ github.event.inputs.force-release-npm == 'true' || steps.release.outputs['packages/catppuccin-vscode--release_created'] == 'true' }}
+      theme_release: ${{ github.event.inputs.force-release-theme == 'true' || steps.release.outputs['packages/tsdevau-catppuccin-vsc--release_created'] == 'true' }}
+      theme_tag: ${{ github.event.inputs.force-release-theme-tag || steps.release.outputs['packages/tsdevau-catppuccin-vsc--tag_name'] }}
+      pack_release: ${{ github.event.inputs.force-release-pack == 'true' || steps.release.outputs['packages/tsdevau-catppuccin-vsc-pack--release_created'] == 'true' }}
+      # npm_release: ${{ github.event.inputs.force-release-npm == 'true' || steps.release.outputs['packages/catppuccin-vscode--release_created'] == 'true' }}
 
   release-vscode:
     permissions:
@@ -69,28 +69,28 @@ jobs:
 
       - name: Build VSCode
         id: build-vscode
-        run: pnpm --filter catppuccin-vsc core:build
+        run: pnpm --filter tsdevau-catppuccin-vsc core:build
 
       - name: Publish to Visual Studio Marketplace
-        working-directory: ./packages/catppuccin-vsc
+        working-directory: ./packages/tsdevau-catppuccin-vsc
         run: |
-          npx @vscode/vsce publish --pat "${{ secrets.VS_MARKETPLACE_TOKEN }}" --packagePath "${{ steps.build-vscode.outputs.vsixPath }}"
+          npx @vscode/vsce publish --pat "${{ secrets.VSCE_PAT }}" --packagePath "${{ steps.build-vscode.outputs.vsixPath }}"
 
       - name: Publish to Open VSX Registry
-        working-directory: ./packages/catppuccin-vsc
+        working-directory: ./packages/tsdevau-catppuccin-vsc
         # continue even if OpenVSX fails
         # -> see https://github.com/catppuccin/vscode/issues/51
         continue-on-error: true
         timeout-minutes: 10
         run: |
-          npx ovsx publish --pat "${{ secrets.OPEN_VSX_TOKEN }}" --packagePath "${{ steps.build-vscode.outputs.vsixPath }}"
+          npx ovsx publish --pat "${{ secrets.OVSX_PAT }}" --packagePath "${{ steps.build-vscode.outputs.vsixPath }}"
 
       - name: Add files to GH Release
-        working-directory: ./packages/catppuccin-vsc
+        working-directory: ./packages/tsdevau-catppuccin-vsc
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload ${{ needs.release-please.outputs.theme_tag }} catppuccin-*.vsix
+          gh release upload ${{ needs.release-please.outputs.theme_tag }} tsdevau-catppuccin-*.vsix
 
   release-pack:
     runs-on: ubuntu-latest
@@ -106,62 +106,62 @@ jobs:
           cache: pnpm
       - run: pnpm i --frozen-lockfile
 
-      - run: pnpm --filter catppuccin-vsc-pack pack:build
+      - run: pnpm --filter tsdevau-catppuccin-vsc-pack pack:build
 
       - name: Publish to Visual Studio Marketplace
-        working-directory: ./packages/catppuccin-vsc-pack
+        working-directory: ./packages/tsdevau-catppuccin-vsc-pack
         run: |
-          npx @vscode/vsce publish --pat "${{ secrets.VS_MARKETPLACE_TOKEN }}" --packagePath ./catppuccin-vsc-pack.vsix
+          npx @vscode/vsce publish --pat "${{ secrets.VSCE_PAT }}" --packagePath ./tsdevau-catppuccin-vsc-pack.vsix
 
       - name: Publish to Open VSX Registry
-        working-directory: ./packages/catppuccin-vsc-pack
+        working-directory: ./packages/tsdevau-catppuccin-vsc-pack
         # continue even if OpenVSX fails
         # -> see https://github.com/catppuccin/vscode/issues/51
         continue-on-error: true
         timeout-minutes: 10
         run: |
-          npx ovsx publish --pat "${{ secrets.OPEN_VSX_TOKEN }}" --packagePath ./catppuccin-vsc-pack.vsix
+          npx ovsx publish --pat "${{ secrets.OVSX_PAT }}" --packagePath ./tsdevau-catppuccin-vsc-pack.vsix
 
-  release-npm:
-    permissions:
-      id-token: write
+  # release-npm:
+  #   permissions:
+  #     id-token: write
 
-    runs-on: ubuntu-latest
-    needs: release-please
-    if: ${{ needs.release-please.outputs.npm_release == 'true' }}
+  #   runs-on: ubuntu-latest
+  #   needs: release-please
+  #   if: ${{ needs.release-please.outputs.npm_release == 'true' }}
 
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
-        with:
-          node-version: 22
-          cache: pnpm
-          registry-url: https://registry.npmjs.org
-      - run: pnpm i --frozen-lockfile
+  #   steps:
+  #     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+  #     - uses: pnpm/action-setup@v4
+  #     - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+  #       with:
+  #         node-version: 22
+  #         cache: pnpm
+  #         registry-url: https://registry.npmjs.org
+  #     - run: pnpm i --frozen-lockfile
 
-      - name: Publish compiled NPM package
-        working-directory: ./packages/catppuccin-vscode
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm publish
+  #     - name: Publish compiled NPM package
+  #       working-directory: ./packages/catppuccin-vscode
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  #       run: pnpm publish
 
-  mark-vscode-theme-as-latest:
-    runs-on: ubuntu-latest
+  # mark-vscode-theme-as-latest:
+  #   runs-on: ubuntu-latest
 
-    # always run after all other jobs
-    if: ${{ always() }}
-    needs:
-      - release-please
-      - release-vscode
-      - release-pack
-      - release-npm
+  #   # always run after all other jobs
+  #   if: ${{ always() }}
+  #   needs:
+  #     - release-please
+  #     - release-vscode
+  #     - release-pack
+  #     - release-npm
 
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        if: ${{ needs.release-please.outputs.theme_release == 'true' }}
-      - name: Mark VSCode theme release as latest release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh release edit ${{ needs.release-please.outputs.theme_tag }} --latest
-        if: ${{ needs.release-please.outputs.theme_release == 'true' }}
+  #   steps:
+  #     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+  #       if: ${{ needs.release-please.outputs.theme_release == 'true' }}
+  #     - name: Mark VSCode theme release as latest release
+  #       env:
+  #         GH_TOKEN: ${{ github.token }}
+  #       run: gh release edit ${{ needs.release-please.outputs.theme_tag }} --latest
+  #       if: ${{ needs.release-please.outputs.theme_release == 'true' }}

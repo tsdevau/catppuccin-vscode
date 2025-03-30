@@ -1,11 +1,11 @@
 {
   "bootstrap-sha": "55b3e5d6248eb201c0e16424ce6f345757e94bad",
   "packages": {
-    "packages/catppuccin-vsc": {
-      "component": "catppuccin-vsc"
+    "packages/tsdevau-catppuccin-vsc": {
+      "component": "tsdevau-catppuccin-vsc"
     },
-    "packages/catppuccin-vsc-pack": {
-      "component": "catppuccin-vsc-pack",
+    "packages/tsdevau-catppuccin-vsc-pack": {
+      "component": "tsdevau-catppuccin-vsc-pack",
       "changelog-sections": [
         { "type": "feat", "section": "Features" },
         { "type": "fix", "section": "Bug Fixes" },
@@ -20,15 +20,15 @@
         { "type": "ci", "section": "Continuous Integration", "hidden": true }
       ]
     },
-    "packages/catppuccin-vscode": {
-      "component": "@catppuccin/vscode"
+    "packages/tsdevau-catppuccin-vscode": {
+      "component": "tsdevau-catppuccin-vscode"
     }
   },
   "plugins": [
     {
       "type": "linked-versions",
       "groupName": "theme",
-      "components": ["catppuccin-vsc", "@catppuccin/vscode"]
+      "components": ["tsdevau-catppuccin-vsc", "tsdevau-catppuccin-vscode"]
     }
   ],
   "release-type": "node",

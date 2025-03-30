@@ -124,12 +124,12 @@ Catppuccin for VSCode can be customized to your liking. If you like the Catppucc
 ```jsonc
 {
   // use Mocha as the base
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "tsdevau-Catppuccin Mocha",
   // pink as the accent color
-  "catppuccin.accentColor": "pink",
+  "tsdevau-catppuccin.accentColor": "pink",
   // make Mocha specifically very dark
   // (this preserves other flavors!)
-  "catppuccin.colorOverrides": {
+  "tsdevau-catppuccin.colorOverrides": {
     "mocha": {
       "base": "#000000",
       "mantle": "#010101",
@@ -137,7 +137,7 @@ Catppuccin for VSCode can be customized to your liking. If you like the Catppucc
     },
   },
   // use your accent (pink) on the statusBar as well
-  "catppuccin.customUIColors": {
+  "tsdevau-catppuccin.customUIColors": {
     "mocha": {
       "statusBar.foreground": "accent",
     },
@@ -150,11 +150,11 @@ Catppuccin for VSCode can be customized to your liking. If you like the Catppucc
 <img width="1488" alt="oldeppuccin-pink-accent" src="https://user-images.githubusercontent.com/79978224/265295206-47d0c993-5d61-4e93-aa96-6d0d95a24f33.png">
 </details>
 
-To see all available options, open your settings and look for `Extensions > Catppuccin`.
+To see all available options, open your settings and look for `Extensions > tsdevau-Catppuccin`.
 
 ### Custom accent color
 
-`catppuccin.accentColor`
+`tsdevau-catppuccin.accentColor`
 
 You can choose any color as your "accent" color. `mauve` is our default, but you can add more personality by using your favorite!
 
@@ -162,13 +162,13 @@ You can choose any color as your "accent" color. `mauve` is our default, but you
 
 You can toggle whether to use
 
-- italics for keywords: `catppuccin.italicKeywords`
-- italics for comments: `catppuccin.italicComments`
-- bold for keywords: `catppuccin.boldKeywords`
+- italics for keywords: `tsdevau-catppuccin.italicKeywords`
+- italics for comments: `tsdevau-catppuccin.italicComments`
+- bold for keywords: `tsdevau-catppuccin.boldKeywords`
 
 ### Flat appearance
 
-`catppuccin.workbenchMode`
+`tsdevau-catppuccin.workbenchMode`
 
 By default, Catppuccin for VSCode uses three shades of our `base` color for the workbench.
 For example, in Mocha:
@@ -203,7 +203,7 @@ For absolute minimalism, you can go with `minimal`; a single shade for the whole
 
 ### Paired Brackets
 
-`catppuccin.bracketMode`
+`tsdevau-catppuccin.bracketMode`
 
 By default, we use `red`, `peach`, `yellow`, `green`, `blue`, and `mauve` for matching bracket pairs. You can change that option if you want different colors:
 
@@ -214,14 +214,14 @@ By default, we use `red`, `peach`, `yellow`, `green`, `blue`, and `mauve` for ma
 
 ### Override palette colors
 
-`catppuccin.colorOverrides`
+`tsdevau-catppuccin.colorOverrides`
 
 Colors can be overwritten in the JSON user settings, like so:
 
 ```jsonc
 {
   // ...your other settings...
-  "catppuccin.colorOverrides": {
+  "tsdevau-catppuccin.colorOverrides": {
     // make text red red all flavors
     "all": {
       "text": "#ff0000",
@@ -238,13 +238,13 @@ Colors can be overwritten in the JSON user settings, like so:
 
 ### Use palette colors on workbench elements (UI)
 
-`catppuccin.customUIColors`
+`tsdevau-catppuccin.customUIColors`
 
 If you want to customize where certain palette colors appear, you can change it like so:
 
 ```jsonc
 {
-  "catppuccin.customUIColors": {
+  "tsdevau-catppuccin.customUIColors": {
     // make the breadcrumb "text" on "overlay0" for all flavors
     "all": {
       "breadcrumb.background": "overlay0",

@@ -6,7 +6,8 @@ import { getFlag } from "type-flag";
 import generateThemes from "@/hooks/generateThemes";
 import { readPackageJsonVersion, updatePackageJson } from "@/hooks/packageJson";
 
-const development = getFlag("--dev", Boolean);
+let development = getFlag("--dev", Boolean);
+development = false;
 
 await generateThemes();
 
@@ -22,8 +23,8 @@ await build({
   clean: true,
   entry: ["src/browser.ts", "src/main.ts", "src/hooks/generateThemes.ts"],
   external: ["vscode"],
-  minify: !development,
-  sourcemap: development,
+  minify: true,
+  sourcemap: false,
   target: "node16",
 });
 
@@ -32,4 +33,5 @@ const packagePath = `tsdevau-catppuccin-vsc-${packageJsonVersion}.vsix`;
 await createVSIX({ dependencies: false, packagePath });
 
 // the upload step in the CI required the path to the vsix file
-if (process.env.GITHUB_ACTIONS) setOutput("vsixPath", packagePath);
+// if (process.env.GITHUB_ACTIONS) setOutput("vsixPath", packagePath);
+setOutput("vsixPath", packagePath);

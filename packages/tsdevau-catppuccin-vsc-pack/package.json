@@ -3,7 +3,7 @@
   "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
   "version": "1.0.2",
   "displayName": "tsdevau-Catppuccin Pack",
-  "publisher": "tsdevau",
+  "publisher": "tpsTech",
   "icon": "icon.png",
   "private": true,
   "repository": {

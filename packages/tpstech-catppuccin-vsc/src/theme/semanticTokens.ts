@@ -1,7 +1,7 @@
-import type { SemanticTokens, ThemeContext } from "@/types";
+import type { SemanticTokens, ThemeContext } from "@/types"
 
 export const getSemanticTokens = (context: ThemeContext): SemanticTokens => {
-  const { palette } = context;
+  const { palette } = context
 
   return {
     enumMember: { foreground: "#c084fc" },
@@ -66,5 +66,5 @@ export const getSemanticTokens = (context: ThemeContext): SemanticTokens => {
     "text.strong": { foreground: palette.red, fontStyle: "bold" },
     "text.math": { foreground: palette.flamingo },
     pol: { foreground: palette.flamingo },
-  };
-};
+  }
+}

@@ -1,7 +1,5 @@
-// eslint-disable-next-line no-restricted-modules, @typescript-eslint/no-var-requires
-const nodeStdLibrary = require("node:module").builtinModules.map(
-  (module) => `node:${module}`,
-);
+// eslint-disable-next-line no-restricted-modules, @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
+const nodeStdLibrary = require("node:module").builtinModules.map((module) => `node:${module}`)
 
 /** @type {import("eslint").Linter["config"]} */
 module.exports = {
@@ -18,4 +16,4 @@ module.exports = {
       },
     },
   ],
-};
+}

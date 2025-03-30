@@ -1,7 +1,7 @@
-import { readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
+import { readFile, writeFile } from "node:fs/promises"
+import path from "node:path"
 
-import { repoRoot } from "./constants";
+import { repoRoot } from "./constants"
 
 export const accents = [
   "rosewater",
@@ -18,7 +18,7 @@ export const accents = [
   "sapphire",
   "blue",
   "lavender",
-];
+]
 
 const configuration = (version: string) => {
   return {
@@ -96,8 +96,7 @@ const configuration = (version: string) => {
         scope: "application",
         type: "boolean",
         default: false,
-        description:
-          "Controls whether borders should be enabled on some additional UI elements.",
+        description: "Controls whether borders should be enabled on some additional UI elements.",
       },
       "tpstech-catppuccin.syncWithIconPack": {
         scope: "application",
@@ -107,17 +106,15 @@ const configuration = (version: string) => {
           "Controls whether to sync the currently active Catppuccin by tpsTech flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)",
       },
     },
-  };
-};
+  }
+}
 
 const readPackageJsonVersion = async () => {
-  return await readFile(path.join(repoRoot, "package.json"), "utf8").then(
-    (data) => {
-      const json = JSON.parse(data);
-      return json.version;
-    },
-  );
-};
+  return await readFile(path.join(repoRoot, "package.json"), "utf8").then((data) => {
+    const json = JSON.parse(data)
+    return json.version
+  })
+}
 
 const updatePackageJson = async () => {
   return await readFile(path.join(repoRoot, "package.json"), "utf8")
@@ -129,16 +126,12 @@ const updatePackageJson = async () => {
           ...data.contributes,
           configuration: configuration(data.version),
         },
-      };
+      }
     })
     .then((data) => {
-      writeFile(
-        path.join(repoRoot, "package.json"),
-        JSON.stringify(data, undefined, 2) + "\n",
-        "utf8",
-      );
-      return data;
-    });
-};
+      writeFile(path.join(repoRoot, "package.json"), JSON.stringify(data, undefined, 2) + "\n", "utf8")
+      return data
+    })
+}
 
-export { readPackageJsonVersion, updatePackageJson };
+export { readPackageJsonVersion, updatePackageJson }

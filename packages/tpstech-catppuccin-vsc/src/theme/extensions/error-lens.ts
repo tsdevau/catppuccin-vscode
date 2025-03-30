@@ -1,10 +1,8 @@
-import type { ErrorLensColors, ThemeContext } from "@/types";
-import { opacity } from "@/theme/utils";
+import type { ErrorLensColors, ThemeContext } from "@/types"
+import { opacity } from "@/theme/utils"
 
-export default function colors(
-  context: ThemeContext,
-): Partial<ErrorLensColors> {
-  const { palette } = context;
+export default function colors(context: ThemeContext): Partial<ErrorLensColors> {
+  const { palette } = context
 
   return {
     "errorLens.errorBackground": opacity(palette.red, 0.15),
@@ -33,5 +31,5 @@ export default function colors(
     "errorLens.warningForeground": palette.peach,
     "errorLens.warningForegroundLight": palette.peach,
     "errorLens.warningMessageBackground": opacity(palette.peach, 0.15),
-  };
+  }
 }

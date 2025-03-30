@@ -1,10 +1,10 @@
-import { ThemeContext, WorkbenchColors } from "@/types";
-import { opacity } from "@/theme/utils";
+import { ThemeContext, WorkbenchColors } from "@/types"
+import { opacity } from "@/theme/utils"
 
-type WorkbenchPartial = Partial<Record<keyof WorkbenchColors, string>>;
+type WorkbenchPartial = Partial<Record<keyof WorkbenchColors, string>>
 
 const workbench = (context: ThemeContext): WorkbenchPartial => {
-  const { options, palette } = context;
+  const { options, palette } = context
 
   const styles = {
     default: {},
@@ -40,9 +40,9 @@ const workbench = (context: ThemeContext): WorkbenchPartial => {
       "titleBar.activeBackground": palette.base,
       "titleBar.inactiveBackground": palette.base,
     },
-  };
+  }
 
-  return styles[options.workbenchMode];
-};
+  return styles[options.workbenchMode]
+}
 
-export default workbench;
+export default workbench

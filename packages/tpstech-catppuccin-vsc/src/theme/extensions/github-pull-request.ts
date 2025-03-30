@@ -1,9 +1,7 @@
-import type { GitHubPullRequestColors, ThemeContext } from "@/types";
+import type { GitHubPullRequestColors, ThemeContext } from "@/types"
 
-export default function colors(
-  context: ThemeContext,
-): Partial<GitHubPullRequestColors> {
-  const { palette } = context;
+export default function colors(context: ThemeContext): Partial<GitHubPullRequestColors> {
+  const { palette } = context
 
   return {
     "issues.closed": palette.mauve,
@@ -14,5 +12,5 @@ export default function colors(
     "pullRequests.merged": palette.mauve,
     "pullRequests.notification": palette.text,
     "pullRequests.open": palette.green,
-  };
+  }
 }

@@ -1,18 +1,14 @@
-import type { ThemeContext, WorkbenchColors } from "@/types";
-import { mix, opacity, shade, transparent } from "./utils";
-import extensions from "./extensions";
-import uiCustomizations from "./ui";
+import type { ThemeContext, WorkbenchColors } from "@/types"
+import { mix, opacity, shade, transparent } from "./utils"
+import extensions from "./extensions"
+import uiCustomizations from "./ui"
 
-export const getUiColors = (
-  context: ThemeContext,
-): Partial<Record<keyof WorkbenchColors, string>> => {
-  const { palette, paletteAnsi, options, isLatte } = context;
+export const getUiColors = (context: ThemeContext): Partial<Record<keyof WorkbenchColors, string>> => {
+  const { palette, paletteAnsi, options, isLatte } = context
 
-  const accent = palette[options.accent];
-  const dropBackground = opacity(accent, 0.2);
-  const border = options.extraBordersEnabled
-    ? opacity(palette.overlay1, 0.15)
-    : transparent;
+  const accent = palette[options.accent]
+  const dropBackground = opacity(accent, 0.2)
+  const border = options.extraBordersEnabled ? opacity(palette.overlay1, 0.15) : transparent
 
   // find the definitions here:
   // https://code.visualstudio.com/api/references/theme-color
@@ -98,11 +94,7 @@ export const getUiColors = (
     // debug icons
     "debugIcon.breakpointForeground": palette.red,
     "debugIcon.breakpointDisabledForeground": opacity(palette.red, 0.6),
-    "debugIcon.breakpointUnverifiedForeground": mix(
-      palette.red,
-      palette.surface2,
-      0.5,
-    ),
+    "debugIcon.breakpointUnverifiedForeground": mix(palette.red, palette.surface2, 0.5),
     "debugIcon.breakpointCurrentStackframeForeground": palette.surface2,
     "debugIcon.breakpointStackframeForeground": palette.surface2,
     "debugIcon.startForeground": palette.green,
@@ -176,17 +168,11 @@ export const getUiColors = (
     "editor.rangeHighlightBackground": opacity(palette.sky, 0.25),
     "editor.rangeHighlightBorder": transparent,
 
-    "editor.selectionBackground": opacity(
-      palette.overlay2,
-      isLatte ? 0.3 : 0.25,
-    ),
+    "editor.selectionBackground": opacity(palette.overlay2, isLatte ? 0.3 : 0.25),
     "editor.selectionHighlightBackground": opacity(palette.overlay2, 0.2),
     "editor.selectionHighlightBorder": opacity(palette.overlay2, 0.2),
     "editor.wordHighlightBackground": opacity(palette.overlay2, 0.2),
-    "editor.wordHighlightStrongBackground": opacity(
-      palette.blue,
-      isLatte ? 0.15 : 0.2,
-    ),
+    "editor.wordHighlightStrongBackground": opacity(palette.blue, isLatte ? 0.15 : 0.2),
 
     "editorBracketMatch.background": opacity(palette.overlay2, 0.1),
     "editorBracketMatch.border": palette.overlay2,
@@ -315,9 +301,7 @@ export const getUiColors = (
     "tree.inactiveIndentGuidesStroke": palette.surface1,
 
     "menu.background": palette.base,
-    "menu.border": options.extraBordersEnabled
-      ? palette.surface2
-      : opacity(palette.base, 0.5),
+    "menu.border": options.extraBordersEnabled ? palette.surface2 : opacity(palette.base, 0.5),
     "menu.foreground": palette.text,
     "menu.selectionBackground": palette.surface2,
     "menu.selectionBorder": transparent,
@@ -559,5 +543,5 @@ export const getUiColors = (
 
     ...extensions(context),
     ...uiCustomizations(context),
-  };
-};
+  }
+}

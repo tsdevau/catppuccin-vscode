@@ -1,57 +1,33 @@
 {
   "name": "tpstech-catppuccin-vsc",
-  "license": "MIT",
-  "private": true,
   "displayName": "Catppuccin by tpsTech for VSCode",
-  "publisher": "tpsTech",
-  "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
   "version": "3.18.0",
-  "type": "module",
-  "engines": {
-    "vscode": "^1.80.0",
-    "node": ">=20.0.0"
-  },
+  "private": true,
+  "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
   "categories": [
     "Themes"
   ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "capabilities": {
-    "untrustedWorkspaces": {
-      "supported": true
-    },
-    "virtualWorkspaces": true
+  "homepage": "https://github.com/tsdevau/catppuccin-vscode",
+  "bugs": {
+    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsdevau/catppuccin-vscode.git",
+    "directory": "packages/tpstech-catppuccin-vsc"
+  },
+  "license": "MIT",
+  "publisher": "tpsTech",
+  "type": "module",
   "main": "dist/main.cjs",
   "browser": "dist/browser.cjs",
+  "scripts": {
+    "core:build": "tsx build.ts",
+    "core:dev": "tsx build.ts --dev",
+    "core:watch": "tsx watch build.ts --dev",
+    "schema:ui": "tsx src/hooks/updateSchemas.ts"
+  },
   "contributes": {
-    "themes": [
-      {
-        "label": "Catppuccin by tpsTech Mocha",
-        "uiTheme": "vs-dark",
-        "path": "./themes/mocha.json"
-      },
-      {
-        "label": "Catppuccin by tpsTech Macchiato",
-        "uiTheme": "vs-dark",
-        "path": "./themes/macchiato.json"
-      },
-      {
-        "label": "Catppuccin by tpsTech Frappé",
-        "uiTheme": "vs-dark",
-        "path": "./themes/frappe.json"
-      },
-      {
-        "label": "Catppuccin by tpsTech Latte",
-        "uiTheme": "vs",
-        "path": "./themes/latte.json"
-      }
-    ],
     "configuration": {
       "title": "Catppuccin by tpsTech",
       "properties": {
@@ -156,42 +132,66 @@
           "markdownDescription": "Controls whether to sync the currently active Catppuccin by tpsTech flavor with the [Catppuccin Icon Pack](https://github.com/catppuccin/vscode-icons)"
         }
       }
-    }
+    },
+    "themes": [
+      {
+        "label": "Catppuccin by tpsTech Mocha",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mocha.json"
+      },
+      {
+        "label": "Catppuccin by tpsTech Macchiato",
+        "uiTheme": "vs-dark",
+        "path": "./themes/macchiato.json"
+      },
+      {
+        "label": "Catppuccin by tpsTech Frappé",
+        "uiTheme": "vs-dark",
+        "path": "./themes/frappe.json"
+      },
+      {
+        "label": "Catppuccin by tpsTech Latte",
+        "uiTheme": "vs",
+        "path": "./themes/latte.json"
+      }
+    ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tsdevau/catppuccin-vscode.git",
-    "directory": "packages/tpstech-catppuccin-vsc"
-  },
-  "bugs": {
-    "url": "https://github.com/tsdevau/catppuccin-vscode/issues"
-  },
-  "icon": "icon.png",
-  "__metadata": {
-    "publisherDisplayName": "tpsTech",
-    "publisherId": "tpsTech",
-    "isPreReleaseVersion": false
-  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "devDependencies": {
     "@actions/core": "^1.11.1",
-    "@types/tinycolor2": "^1.4.6",
-    "@types/vscode": "~1.80.0",
-    "tinycolor2": "^1.6.0",
-    "type-flag": "^3.0.0",
     "@catppuccin/palette": "catalog:",
     "@catppuccin/vsc-typegen": "workspace:*",
     "@tsconfig/node22": "catalog:",
     "@types/node": "catalog:",
+    "@types/tinycolor2": "^1.4.6",
+    "@types/vscode": "~1.80.0",
     "@vscode/vsce": "catalog:",
+    "tinycolor2": "^1.6.0",
     "tsup": "catalog:",
     "tsx": "catalog:",
+    "type-flag": "^3.0.0",
     "typescript": "catalog:"
   },
-  "scripts": {
-    "core:build": "tsx build.ts",
-    "core:dev": "tsx build.ts --dev",
-    "core:watch": "tsx watch build.ts --dev",
-    "schema:ui": "tsx src/hooks/updateSchemas.ts"
+  "engines": {
+    "node": ">=20.0.0",
+    "vscode": "^1.80.0"
   },
-  "homepage": "https://github.com/tsdevau/catppuccin-vscode"
+  "icon": "icon.png",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "__metadata": {
+    "publisherDisplayName": "tpsTech",
+    "publisherId": "tpsTech",
+    "isPreReleaseVersion": false
+  }
 }

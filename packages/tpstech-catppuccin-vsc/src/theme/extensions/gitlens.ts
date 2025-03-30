@@ -1,8 +1,8 @@
-import { opacity, shade, transparent } from "@/theme/utils";
-import type { GitLensColors, ThemeContext } from "@/types";
+import { opacity, shade, transparent } from "@/theme/utils"
+import type { GitLensColors, ThemeContext } from "@/types"
 
 export default function colors(context: ThemeContext): Partial<GitLensColors> {
-  const { palette, options } = context;
+  const { palette, options } = context
 
   const graphLaneColors = [
     palette.mauve,
@@ -19,9 +19,9 @@ export default function colors(context: ThemeContext): Partial<GitLensColors> {
     palette.sapphire,
     palette.maroon,
     palette.sky,
-  ];
+  ]
 
-  const accentIndex = graphLaneColors.indexOf(palette[options.accent]);
+  const accentIndex = graphLaneColors.indexOf(palette[options.accent])
 
   return {
     "gitlens.gutterBackgroundColor": opacity(palette.surface0, 0.3),
@@ -29,14 +29,8 @@ export default function colors(context: ThemeContext): Partial<GitLensColors> {
     "gitlens.gutterUncommittedForegroundColor": palette[options.accent],
     "gitlens.trailingLineBackgroundColor": transparent,
     "gitlens.trailingLineForegroundColor": opacity(palette.text, 0.3),
-    "gitlens.lineHighlightBackgroundColor": opacity(
-      palette[options.accent],
-      0.15,
-    ),
-    "gitlens.lineHighlightOverviewRulerColor": opacity(
-      palette[options.accent],
-      0.8,
-    ),
+    "gitlens.lineHighlightBackgroundColor": opacity(palette[options.accent], 0.15),
+    "gitlens.lineHighlightOverviewRulerColor": opacity(palette[options.accent], 0.8),
     "gitlens.openAutolinkedIssueIconColor": palette.green,
     "gitlens.closedAutolinkedIssueIconColor": palette.mauve,
     "gitlens.closedPullRequestIconColor": palette.red,
@@ -58,37 +52,23 @@ export default function colors(context: ThemeContext): Partial<GitLensColors> {
     // "gitlens.decorations.branchUpToDateForegroundColor": palette.text, // (default: sideBar.foreground)
     "gitlens.decorations.branchUnpublishedForegroundColor": palette.green,
     "gitlens.decorations.branchMissingUpstreamForegroundColor": palette.peach,
-    "gitlens.decorations.statusMergingOrRebasingConflictForegroundColor":
-      palette.maroon,
-    "gitlens.decorations.statusMergingOrRebasingForegroundColor":
-      palette.yellow,
+    "gitlens.decorations.statusMergingOrRebasingConflictForegroundColor": palette.maroon,
+    "gitlens.decorations.statusMergingOrRebasingForegroundColor": palette.yellow,
     "gitlens.decorations.workspaceRepoMissingForegroundColor": palette.subtext0,
-    "gitlens.decorations.workspaceCurrentForegroundColor":
-      palette[options.accent],
-    "gitlens.decorations.workspaceRepoOpenForegroundColor":
-      palette[options.accent],
-    "gitlens.decorations.worktreeHasUncommittedChangesForegroundColor":
-      palette.peach,
+    "gitlens.decorations.workspaceCurrentForegroundColor": palette[options.accent],
+    "gitlens.decorations.workspaceRepoOpenForegroundColor": palette[options.accent],
+    "gitlens.decorations.worktreeHasUncommittedChangesForegroundColor": palette.peach,
     "gitlens.decorations.worktreeMissingForegroundColor": palette.maroon,
     "gitlens.graphLane1Color": graphLaneColors[accentIndex],
-    "gitlens.graphLane2Color":
-      graphLaneColors[(accentIndex + 1) % graphLaneColors.length],
-    "gitlens.graphLane3Color":
-      graphLaneColors[(accentIndex + 2) % graphLaneColors.length],
-    "gitlens.graphLane4Color":
-      graphLaneColors[(accentIndex + 3) % graphLaneColors.length],
-    "gitlens.graphLane5Color":
-      graphLaneColors[(accentIndex + 4) % graphLaneColors.length],
-    "gitlens.graphLane6Color":
-      graphLaneColors[(accentIndex + 5) % graphLaneColors.length],
-    "gitlens.graphLane7Color":
-      graphLaneColors[(accentIndex + 6) % graphLaneColors.length],
-    "gitlens.graphLane8Color":
-      graphLaneColors[(accentIndex + 7) % graphLaneColors.length],
-    "gitlens.graphLane9Color":
-      graphLaneColors[(accentIndex + 8) % graphLaneColors.length],
-    "gitlens.graphLane10Color":
-      graphLaneColors[(accentIndex + 9) % graphLaneColors.length],
+    "gitlens.graphLane2Color": graphLaneColors[(accentIndex + 1) % graphLaneColors.length],
+    "gitlens.graphLane3Color": graphLaneColors[(accentIndex + 2) % graphLaneColors.length],
+    "gitlens.graphLane4Color": graphLaneColors[(accentIndex + 3) % graphLaneColors.length],
+    "gitlens.graphLane5Color": graphLaneColors[(accentIndex + 4) % graphLaneColors.length],
+    "gitlens.graphLane6Color": graphLaneColors[(accentIndex + 5) % graphLaneColors.length],
+    "gitlens.graphLane7Color": graphLaneColors[(accentIndex + 6) % graphLaneColors.length],
+    "gitlens.graphLane8Color": graphLaneColors[(accentIndex + 7) % graphLaneColors.length],
+    "gitlens.graphLane9Color": graphLaneColors[(accentIndex + 8) % graphLaneColors.length],
+    "gitlens.graphLane10Color": graphLaneColors[(accentIndex + 9) % graphLaneColors.length],
     "gitlens.graphChangesColumnAddedColor": palette.green,
     "gitlens.graphChangesColumnDeletedColor": palette.red,
     "gitlens.graphMinimapMarkerHeadColor": palette.green,
@@ -105,5 +85,5 @@ export default function colors(context: ThemeContext): Partial<GitLensColors> {
     "gitlens.graphScrollMarkerStashesColor": palette.mauve,
     "gitlens.graphMinimapMarkerTagsColor": palette.flamingo,
     "gitlens.graphScrollMarkerTagsColor": palette.flamingo,
-  };
+  }
 }

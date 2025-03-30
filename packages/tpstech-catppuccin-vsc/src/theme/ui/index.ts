@@ -1,10 +1,10 @@
-import { ThemeContext } from "@/types";
+import { ThemeContext } from "@/types"
 
-import azureDataStudio from "./azureDataStudio";
-import brackets from "./brackets";
-import workbench from "./workbench";
+import azureDataStudio from "./azureDataStudio"
+import brackets from "./brackets"
+import workbench from "./workbench"
 
-import customNamedColors from "./customNames";
+import customNamedColors from "./customNames"
 
 const uiCustomizations = (context: ThemeContext) => {
   return {
@@ -12,7 +12,7 @@ const uiCustomizations = (context: ThemeContext) => {
     ...workbench(context),
     ...customNamedColors(context),
     ...azureDataStudio(context),
-  };
-};
+  }
+}
 
-export default uiCustomizations;
+export default uiCustomizations

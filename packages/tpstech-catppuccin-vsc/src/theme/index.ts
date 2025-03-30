@@ -1,15 +1,9 @@
-import { flavors } from "@catppuccin/palette";
+import { flavors } from "@catppuccin/palette"
 
-import type {
-  CatppuccinPaletteAnsi,
-  CatppuccinFlavor,
-  CatppuccinPalette,
-  ThemeContext,
-  ThemeOptions,
-} from "@/types";
-import { getTokenColors } from "./tokenColors";
-import { getSemanticTokens } from "./semanticTokens";
-import { getUiColors } from "./uiColors";
+import type { CatppuccinPaletteAnsi, CatppuccinFlavor, CatppuccinPalette, ThemeContext, ThemeOptions } from "@/types"
+import { getTokenColors } from "./tokenColors"
+import { getSemanticTokens } from "./semanticTokens"
+import { getUiColors } from "./uiColors"
 
 export const defaultOptions: ThemeOptions = {
   accent: "mauve",
@@ -22,31 +16,28 @@ export const defaultOptions: ThemeOptions = {
   extraBordersEnabled: false,
   customUIColors: {},
   syncWithIconPack: true,
-};
+}
 
-export const compileTheme = (
-  flavor: CatppuccinFlavor = "mocha",
-  options: ThemeOptions = defaultOptions,
-) => {
-  const flavorData = flavors[flavor];
-  const ctpPalette = {} as CatppuccinPalette;
+export const compileTheme = (flavor: CatppuccinFlavor = "mocha", options: ThemeOptions = defaultOptions) => {
+  const flavorData = flavors[flavor]
+  const ctpPalette = {} as CatppuccinPalette
   const paletteAnsi = {
     normal: {},
     bright: {},
-  } as CatppuccinPaletteAnsi;
+  } as CatppuccinPaletteAnsi
   for (const [k, v] of flavorData.colorEntries) {
-    ctpPalette[k] = v.hex;
+    ctpPalette[k] = v.hex
   }
   for (const [k, v] of flavorData.ansiColorEntries) {
-    paletteAnsi.normal[k] = v.normal.hex;
-    paletteAnsi.bright[k] = v.bright.hex;
+    paletteAnsi.normal[k] = v.normal.hex
+    paletteAnsi.bright[k] = v.bright.hex
   }
 
   const palette: CatppuccinPalette = {
     ...ctpPalette,
     ...options.colorOverrides?.all,
     ...options.colorOverrides?.[flavor],
-  };
+  }
 
   const context: ThemeContext = {
     flavor,
@@ -54,7 +45,7 @@ export const compileTheme = (
     paletteAnsi,
     options,
     isLatte: flavor === "latte",
-  };
+  }
 
   return {
     name: `Catppuccin ${flavorData.name}`,
@@ -63,5 +54,5 @@ export const compileTheme = (
     semanticHighlighting: true,
     semanticTokenColors: getSemanticTokens(context),
     tokenColors: getTokenColors(context),
-  };
-};
+  }
+}

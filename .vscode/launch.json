@@ -12,10 +12,10 @@
       "type": "extensionHost",
       "request": "launch",
       "args": [
-        "--extensionDevelopmentPath=${workspaceFolder}/packages/tsdevau-catppuccin-vsc"
+        "--extensionDevelopmentPath=${workspaceFolder}/packages/tpstech-catppuccin-vsc"
       ],
       "outFiles": [
-        "${workspaceFolder}/packages/tsdevau-catppuccin-vsc/dist/*.js"
+        "${workspaceFolder}/packages/tpstech-catppuccin-vsc/dist/*.js"
       ]
     }
   ],

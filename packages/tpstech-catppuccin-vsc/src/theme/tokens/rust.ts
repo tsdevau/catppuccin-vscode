@@ -1,7 +1,7 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
@@ -19,10 +19,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "Rust attribute strings",
-      scope: [
-        "meta.attribute.rust string.quoted.double.rust",
-        "meta.attribute.rust string.quoted.single.char.rust",
-      ],
+      scope: ["meta.attribute.rust string.quoted.double.rust", "meta.attribute.rust string.quoted.single.char.rust"],
       settings: {
         fontStyle: "",
       },
@@ -108,11 +105,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "Rust macro",
-      scope: [
-        "support.macro.rust",
-        "meta.macro.rust support.function.rust",
-        "entity.name.function.macro.rust",
-      ],
+      scope: ["support.macro.rust", "meta.macro.rust support.function.rust", "entity.name.function.macro.rust"],
       settings: {
         foreground: palette.blue,
         fontStyle: "italic",
@@ -135,8 +128,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "Rust return type generic",
-      scope:
-        "meta.function.return-type.rust meta.generic.rust storage.type.rust",
+      scope: "meta.function.return-type.rust meta.generic.rust storage.type.rust",
       settings: {
         foreground: palette.text,
       },
@@ -193,7 +185,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         foreground: palette.pink,
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

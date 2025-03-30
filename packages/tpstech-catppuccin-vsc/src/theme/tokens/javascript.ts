@@ -1,7 +1,7 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
@@ -27,21 +27,14 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "JS/TS variable readwrite/readonly imports",
-      scope: [
-        "variable.other.readwrite",
-        "variable.other.readonly",
-        "support.class.component",
-      ],
+      scope: ["variable.other.readwrite", "variable.other.readonly", "support.class.component"],
       settings: {
         foreground: "#ccfbf1",
       },
     },
     {
       name: "JSDoc; these are mainly params, so styled as such",
-      scope: [
-        "variable.other.jsdoc",
-        "comment.block.documentation variable.other",
-      ],
+      scope: ["variable.other.jsdoc", "comment.block.documentation variable.other"],
       settings: {
         foreground: "#7dd3fc",
         fontStyle: "",
@@ -64,11 +57,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "JS/TS modules (module, etc.)",
-      scope: [
-        "support.module.node",
-        "support.type.object.module",
-        "support.module.node",
-      ],
+      scope: ["support.module.node", "support.type.object.module", "support.module.node"],
       settings: {
         foreground: "#fde68a",
       },
@@ -133,10 +122,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "JS/TS template literals variable braces",
-      scope: [
-        "keyword.other.substitution.begin",
-        "keyword.other.substitution.end",
-      ],
+      scope: ["keyword.other.substitution.begin", "keyword.other.substitution.end"],
       settings: {
         foreground: "#fde68a",
       },
@@ -208,20 +194,14 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "JS/TS punctuation separators",
-      scope: [
-        "punctuation.separator.key-value",
-        "punctuation.separator.delimiter",
-      ],
+      scope: ["punctuation.separator.key-value", "punctuation.separator.delimiter"],
       settings: {
         foreground: "#f4f4f5",
       },
     },
     {
       name: "JS/TS punctuation definition",
-      scope: [
-        "punctuation.definition.string.begin",
-        "punctuation.definition.string.end",
-      ],
+      scope: ["punctuation.definition.string.begin", "punctuation.definition.string.end"],
       settings: {
         foreground: "#6ee7b7",
       },
@@ -239,11 +219,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "JS/TS function names",
-      scope: [
-        "entity.name.function",
-        "support.function.console",
-        "support.function",
-      ],
+      scope: ["entity.name.function", "support.function.console", "support.function"],
       settings: {
         foreground: "#60a5fa",
       },
@@ -273,7 +249,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         fontStyle: "italic",
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

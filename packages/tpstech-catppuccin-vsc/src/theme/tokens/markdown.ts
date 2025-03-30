@@ -1,7 +1,7 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
@@ -161,10 +161,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "Markdown triple backticks",
-      scope: [
-        "markup.fenced_code.block punctuation.definition",
-        "markup.raw support.asciidoc",
-      ],
+      scope: ["markup.fenced_code.block punctuation.definition", "markup.raw support.asciidoc"],
       settings: {
         foreground: palette.overlay2,
       },
@@ -201,7 +198,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         fontStyle: "bold",
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

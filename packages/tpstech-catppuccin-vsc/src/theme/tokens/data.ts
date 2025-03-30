@@ -1,7 +1,7 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
@@ -38,10 +38,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "TOML tables / ini groups",
-      scope: [
-        "support.type.property-name.table",
-        "entity.name.section.group-title.ini",
-      ],
+      scope: ["support.type.property-name.table", "entity.name.section.group-title.ini"],
       settings: {
         foreground: palette.yellow,
       },
@@ -55,10 +52,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "YAML anchor puctuation",
-      scope: [
-        "punctuation.definition.anchor.yaml",
-        "punctuation.definition.alias.yaml",
-      ],
+      scope: ["punctuation.definition.anchor.yaml", "punctuation.definition.alias.yaml"],
       settings: {
         foreground: palette.pink,
       },
@@ -70,7 +64,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         foreground: palette.pink,
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

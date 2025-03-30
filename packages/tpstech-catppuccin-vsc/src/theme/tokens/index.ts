@@ -1,42 +1,37 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
-import cpp from "./cpp";
-import cs from "./cs";
-import css from "./css";
-import data from "./data";
-import diff from "./diff";
-import dotenv from "./dotenv";
-import gdscript from "./gdscript";
-import golang from "./golang";
-import graphql from "./graphql";
-import html from "./html";
-import java from "./java";
-import javascript from "./javascript";
-import julia from "./julia";
-import latex from "./latex";
-import liquid from "./liquid";
-import lua from "./lua";
-import markdown from "./markdown";
-import nix from "./nix";
-import php from "./php";
-import python from "./python";
-import regex from "./regex";
-import rust from "./rust";
-import shell from "./shell";
-import typst from "./typst";
+import cpp from "./cpp"
+import cs from "./cs"
+import css from "./css"
+import data from "./data"
+import diff from "./diff"
+import dotenv from "./dotenv"
+import gdscript from "./gdscript"
+import golang from "./golang"
+import graphql from "./graphql"
+import html from "./html"
+import java from "./java"
+import javascript from "./javascript"
+import julia from "./julia"
+import latex from "./latex"
+import liquid from "./liquid"
+import lua from "./lua"
+import markdown from "./markdown"
+import nix from "./nix"
+import php from "./php"
+import python from "./python"
+import regex from "./regex"
+import rust from "./rust"
+import shell from "./shell"
+import typst from "./typst"
 
 export default function tokens(context: ThemeContext): TextmateColors {
-  const { options, palette } = context;
+  const { options, palette } = context
 
   return [
     {
       name: "Basic text & variable names (incl. leading punctuation)",
-      scope: [
-        "text",
-        "source",
-        "variable.other.readwrite",
-        "punctuation.definition.variable",
-      ],
+      scope: ["text", "source", "variable.other.readwrite", "punctuation.definition.variable"],
       settings: {
         foreground: "#f4f4f5",
       },
@@ -87,11 +82,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
     },
     {
       name: "Numbers",
-      scope: [
-        "constant.numeric",
-        "keyword.other.unit.user-defined",
-        "keyword.other.unit.suffix.floating-point",
-      ],
+      scope: ["constant.numeric", "keyword.other.unit.user-defined", "keyword.other.unit.suffix.floating-point"],
       settings: {
         foreground: "#FF8A65",
       },
@@ -187,11 +178,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
     },
     {
       name: "Punctuation",
-      scope: [
-        "punctuation.separator",
-        "punctuation.accessor",
-        "punctuation.definition.generic",
-      ],
+      scope: ["punctuation.separator", "punctuation.accessor", "punctuation.definition.generic"],
       settings: {
         foreground: "#f4f4f5",
       },
@@ -225,10 +212,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
     },
     {
       name: "Enum member",
-      scope: [
-        "meta.enum variable.other.readwrite",
-        "variable.other.enummember",
-      ],
+      scope: ["meta.enum variable.other.readwrite", "variable.other.enummember"],
       settings: {
         foreground: "#c084fc",
       },
@@ -242,12 +226,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
     },
     {
       name: "Types",
-      scope: [
-        "meta.type",
-        "meta.type-alias",
-        "support.type",
-        "entity.name.type",
-      ],
+      scope: ["meta.type", "meta.type-alias", "support.type", "entity.name.type"],
       settings: {
         foreground: "#fde68a",
       },
@@ -370,5 +349,5 @@ export default function tokens(context: ThemeContext): TextmateColors {
       shell,
       typst,
     ].flatMap((element) => element(context)),
-  ];
+  ]
 }

@@ -1,7 +1,7 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
@@ -11,7 +11,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         foreground: palette.pink,
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

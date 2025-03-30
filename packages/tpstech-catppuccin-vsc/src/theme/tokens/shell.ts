@@ -1,7 +1,7 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
@@ -40,18 +40,14 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "Shell interpolated command variable",
-      scope:
-        "meta.string meta.interpolation.parameter.shell variable.other.readwrite",
+      scope: "meta.string meta.interpolation.parameter.shell variable.other.readwrite",
       settings: {
         foreground: palette.peach,
         fontStyle: "italic",
       },
     },
     {
-      scope: [
-        "source.shell punctuation.section.interpolation",
-        "punctuation.definition.evaluation.backticks.shell",
-      ],
+      scope: ["source.shell punctuation.section.interpolation", "punctuation.definition.evaluation.backticks.shell"],
       settings: {
         foreground: palette.teal,
       },
@@ -70,7 +66,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         foreground: palette.text,
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

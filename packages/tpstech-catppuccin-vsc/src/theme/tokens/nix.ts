@@ -1,15 +1,12 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
       name: "Nix attribute names",
-      scope: [
-        "entity.other.attribute-name.multipart.nix",
-        "entity.other.attribute-name.single.nix",
-      ],
+      scope: ["entity.other.attribute-name.multipart.nix", "entity.other.attribute-name.single.nix"],
       settings: {
         foreground: palette.blue,
       },
@@ -38,7 +35,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         fontStyle: "",
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

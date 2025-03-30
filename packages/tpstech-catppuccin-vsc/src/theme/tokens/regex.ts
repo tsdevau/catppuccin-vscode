@@ -1,15 +1,12 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
       name: "Regex string begin/end in JS/TS",
-      scope: [
-        "string.regexp punctuation.definition.string.begin",
-        "string.regexp punctuation.definition.string.end",
-      ],
+      scope: ["string.regexp punctuation.definition.string.begin", "string.regexp punctuation.definition.string.end"],
       settings: {
         foreground: "#6ee7b7",
       },
@@ -30,10 +27,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "Regex group parenthesis & backreference (\\1, \\2, \\3, ...)",
-      scope: [
-        "punctuation.definition.group.regexp",
-        "keyword.other.back-reference.regexp",
-      ],
+      scope: ["punctuation.definition.group.regexp", "keyword.other.back-reference.regexp"],
       settings: {
         foreground: palette.green,
       },
@@ -84,7 +78,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
         foreground: palette.blue,
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

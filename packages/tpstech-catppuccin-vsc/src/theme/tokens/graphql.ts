@@ -1,7 +1,7 @@
-import type { TextmateColors, ThemeContext } from "@/types";
+import type { TextmateColors, ThemeContext } from "@/types"
 
 const tokens = (context: ThemeContext): TextmateColors => {
-  const { palette } = context;
+  const { palette } = context
 
   return [
     {
@@ -27,13 +27,12 @@ const tokens = (context: ThemeContext): TextmateColors => {
     },
     {
       name: "GraphQL field in types",
-      scope:
-        "meta.objectvalues.graphql constant.object.key.graphql string.unquoted.graphql",
+      scope: "meta.objectvalues.graphql constant.object.key.graphql string.unquoted.graphql",
       settings: {
         foreground: palette.flamingo,
       },
     },
-  ];
-};
+  ]
+}
 
-export default tokens;
+export default tokens

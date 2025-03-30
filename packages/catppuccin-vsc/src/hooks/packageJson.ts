@@ -22,27 +22,27 @@ export const accents = [
 
 const configuration = (version: string) => {
   return {
-    title: "tsdevau Catppuccin",
+    title: "tsdevau-Catppuccin",
     properties: {
-      "catppuccin.boldKeywords": {
+      "tsdevau-catppuccin.boldKeywords": {
         scope: "application",
         type: "boolean",
         default: true,
         markdownDescription: "Controls whether to use **bold** for keywords.",
       },
-      "catppuccin.italicComments": {
+      "tsdevau-catppuccin.italicComments": {
         scope: "application",
         type: "boolean",
         default: true,
         markdownDescription: "Controls whether to use *italics* for comments.",
       },
-      "catppuccin.italicKeywords": {
+      "tsdevau-catppuccin.italicKeywords": {
         scope: "application",
         type: "boolean",
         default: true,
         markdownDescription: "Controls whether to use *italics* for keywords.",
       },
-      "catppuccin.colorOverrides": {
+      "tsdevau-catppuccin.colorOverrides": {
         scope: "application",
         type: "object",
         default: {},
@@ -50,7 +50,7 @@ const configuration = (version: string) => {
           "Custom color overrides. Assign your own hex codes to palette colors. See [the docs](https://github.com/catppuccin/vscode#override-palette-colors) for reference.",
         $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v${version}/packages/catppuccin-vsc/schemas/colorOverrides.schema.json`,
       },
-      "catppuccin.customUIColors": {
+      "tsdevau-catppuccin.customUIColors": {
         scope: "application",
         type: "object",
         default: {},
@@ -58,14 +58,14 @@ const configuration = (version: string) => {
           "Customize UI colors. Map `workbench.colorCustomizations` to palette colors. See [the docs](https://github.com/catppuccin/vscode#use-palette-colors-on-workbench-elements-ui) for reference.",
         $ref: `https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v${version}/packages/catppuccin-vsc/schemas/customUIColors.schema.json`,
       },
-      "catppuccin.accentColor": {
+      "tsdevau-catppuccin.accentColor": {
         scope: "application",
         type: "string",
         default: "mauve",
         description: "Controls which accent color to use.",
         enum: accents,
       },
-      "catppuccin.workbenchMode": {
+      "tsdevau-catppuccin.workbenchMode": {
         scope: "application",
         type: "string",
         default: "default",
@@ -77,7 +77,7 @@ const configuration = (version: string) => {
           "A minimal look, using 1 shade of the base color.",
         ],
       },
-      "catppuccin.bracketMode": {
+      "tsdevau-catppuccin.bracketMode": {
         scope: "application",
         type: "string",
         default: "rainbow",
@@ -90,14 +90,14 @@ const configuration = (version: string) => {
           "Uses the same bracket pair colors as our neovim port.",
         ],
       },
-      "catppuccin.extraBordersEnabled": {
+      "tsdevau-catppuccin.extraBordersEnabled": {
         scope: "application",
         type: "boolean",
         default: false,
         description:
           "Controls whether borders should be enabled on some additional UI elements.",
       },
-      "catppuccin.syncWithIconPack": {
+      "tsdevau-catppuccin.syncWithIconPack": {
         scope: "application",
         type: "boolean",
         default: true,

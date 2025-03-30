@@ -55,39 +55,39 @@
     "configuration": {
       "title": "tsdevau-Catppuccin",
       "properties": {
-        "catppuccin.boldKeywords": {
+        "tsdevau-catppuccin.boldKeywords": {
           "scope": "application",
           "type": "boolean",
           "default": true,
           "markdownDescription": "Controls whether to use **bold** for keywords."
         },
-        "catppuccin.italicComments": {
+        "tsdevau-catppuccin.italicComments": {
           "scope": "application",
           "type": "boolean",
           "default": true,
           "markdownDescription": "Controls whether to use *italics* for comments."
         },
-        "catppuccin.italicKeywords": {
+        "tsdevau-catppuccin.italicKeywords": {
           "scope": "application",
           "type": "boolean",
           "default": true,
           "markdownDescription": "Controls whether to use *italics* for keywords."
         },
-        "catppuccin.colorOverrides": {
+        "tsdevau-catppuccin.colorOverrides": {
           "scope": "application",
           "type": "object",
           "default": {},
           "markdownDescription": "Custom color overrides. Assign your own hex codes to palette colors. See [the docs](https://github.com/catppuccin/vscode#override-palette-colors) for reference.",
           "$ref": "https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.0/packages/catppuccin-vsc/schemas/colorOverrides.schema.json"
         },
-        "catppuccin.customUIColors": {
+        "tsdevau-catppuccin.customUIColors": {
           "scope": "application",
           "type": "object",
           "default": {},
           "markdownDescription": "Customize UI colors. Map `workbench.colorCustomizations` to palette colors. See [the docs](https://github.com/catppuccin/vscode#use-palette-colors-on-workbench-elements-ui) for reference.",
           "$ref": "https://esm.sh/gh/catppuccin/vscode@catppuccin-vsc-v3.17.0/packages/catppuccin-vsc/schemas/customUIColors.schema.json"
         },
-        "catppuccin.accentColor": {
+        "tsdevau-catppuccin.accentColor": {
           "scope": "application",
           "type": "string",
           "default": "mauve",
@@ -109,7 +109,7 @@
             "lavender"
           ]
         },
-        "catppuccin.workbenchMode": {
+        "tsdevau-catppuccin.workbenchMode": {
           "scope": "application",
           "type": "string",
           "default": "default",
@@ -125,7 +125,7 @@
             "A minimal look, using 1 shade of the base color."
           ]
         },
-        "catppuccin.bracketMode": {
+        "tsdevau-catppuccin.bracketMode": {
           "scope": "application",
           "type": "string",
           "default": "rainbow",
@@ -143,13 +143,13 @@
             "Uses the same bracket pair colors as our neovim port."
           ]
         },
-        "catppuccin.extraBordersEnabled": {
+        "tsdevau-catppuccin.extraBordersEnabled": {
           "scope": "application",
           "type": "boolean",
           "default": false,
           "description": "Controls whether borders should be enabled on some additional UI elements."
         },
-        "catppuccin.syncWithIconPack": {
+        "tsdevau-catppuccin.syncWithIconPack": {
           "scope": "application",
           "type": "boolean",
           "default": true,

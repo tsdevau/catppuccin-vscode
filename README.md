@@ -1,19 +1,22 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for <a href="https://code.visualstudio.com">VSCode</a>
+	Catppuccin for <a href="https://code.visualstudio.com">VSCode</a> by tpsTech
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
-    <a href="https://github.com/catppuccin/vscode/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/vscode?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-    <a href="https://github.com/catppuccin/vscode/issues"><img src="https://img.shields.io/github/issues/catppuccin/vscode?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-    <a href="https://github.com/catppuccin/vscode/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/vscode?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+    <a href="https://github.com/tsdevau/catppuccin-vscode/stargazers"><img src="https://img.shields.io/github/stars/tsdevau/catppuccin-vscode?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+    <a href="https://github.com/tsdevau/catppuccin-vscode/issues"><img src="https://img.shields.io/github/issues/tsdevau/catppuccin-vscode?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+    <a href="https://github.com/tsdevau/catppuccin-vscode/contributors"><img src="https://img.shields.io/github/contributors/tsdevau/catppuccin-vscode?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
   <img src="assets/preview.webp"/>
 </p>
+
+## IMPORTANT NOTICE
+**!!! This is a fork of the original [Catppuccin for VSCode](https://github.com/catppuccin/vscode), maintained by [tpsTech](https://github.com/tsdevau/catppuccin-vscode) !!!**
 
 ## Previews
 
@@ -40,62 +43,19 @@
 
 Install the extension from a Marketplace:
 
-- [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
-- [Open-VSX](https://open-vsx.org/extension/Catppuccin/catppuccin-vsc)
+- [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=tpstech.tpstech-catppuccin-vsc)
+- [Open-VSX](https://open-vsx.org/extension/tpstech/tpstech-catppuccin-vsc)
 
 ### Manual method for installation
 
 Download the VSIX from
-[the latest GitHub release](https://github.com/catppuccin/vscode/releases/latest).
+[the latest GitHub release](https://github.com/tsdevau/catppuccin-vscode/releases/latest).
 Open the Command Palette and select "Extensions: Install from VSIX...", then open the file you just downloaded.
-
-### Using the JSON files
-
-If you need to use the JSON files for libraries like [Shiki](https://www.npmjs.com/package/shiki), the theme files are published to NPM as [`@catppuccin/vscode`](https://www.npmjs.com/package/@catppuccin/vscode).
-
-### Nix (Home-Manager) users
-
-If you would like to change the theme configuration, the theme expects to have a mutable directory to write its JSON files into.
-This means that you will have to either:
-
-- Install this extension in a non-declarative way so that the extension has permissions to write files.\
-  This means fully excluding `nixpkgs.vscode-extensions.catppuccin.catppuccin-vsc` from your configuration; Just using `programs.vscode.mutableExtensionsDir = true;` will **NOT WORK**.
-- Use our [catppuccin/nix](https://github.com/catppuccin/nix) module to build it with your VSCode configuration, using overrides.\
-  This is a declarative way to compile the theme with your preferred options. **Please refer to the example below for a sample configuration.**
-
-```nix
-{
-  # in your inputs:
-  inputs.catppuccin.url = "github:catppuccin/nix";
-
-  # in your home-manager options:
-  catppuccin = {
-    enable = true;
-    # optionally configure the extension settings, defaults are shown below:
-    vscode = {
-      accent = "mauve";
-      settings = {
-        boldKeywords = true;
-        italicComments = true;
-        italicKeywords = true;
-        colorOverrides = {};
-        customUIColors = {};
-        workbenchMode = "default";
-        bracketMode = "rainbow";
-        extraBordersEnabled = false;
-      };
-    };
-  };
-  programs.vscode = {
-    enable = true;
-  };
-}
-```
 
 ## Customization
 
 > [!Note]
-> We also have a [Catppuccin Icon Pack](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons)!
+> Check out the complementary [Catppuccin Icon Pack](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons)!
 
 ### VSCode settings
 
@@ -117,9 +77,9 @@ The following settings inside your `settings.json` are recommended for this plug
 }
 ```
 
-### Catppuccin settings
+### tpstech-catppuccin-vsc settings
 
-Catppuccin for VSCode can be customized to your liking. If you like the Catppuccin colors but feel that they are a bit too bright for working at night, customization got you covered!
+tpstech-catppuccin-vsc for VSCode can be customized to your liking. If you like the colors but feel that they are a bit too bright for working at night, customization got you covered!
 
 ```jsonc
 {
@@ -210,7 +170,7 @@ By default, we use `red`, `peach`, `yellow`, `green`, `blue`, and `mauve` for ma
 - `rainbow` is our default setting, using the colors described above.
 - `dimmed` uses the same rainbow colors, but muted by 20%.
 - `monochromatic` only uses grayish colors, from `subtext1` to `surface2`.
-- `neovim` uses the same colors that [`nvim-ts-rainbow`](https://github.com/p00f/nvim-ts-rainbow) uses in our [Neovim port](https://github.com/catppuccin/nvim).
+- `neovim` uses the same colors that [`nvim-ts-rainbow`](https://github.com/p00f/nvim-ts-rainbow) uses.
 
 ### Override palette colors
 
@@ -270,7 +230,7 @@ You can find all the available keys [here](https://code.visualstudio.com/api/ref
 
 ## Extension Support
 
-Catppuccin for VSCode also themes the following extensions:
+tpstech-catppuccin-vsc for VSCode also themes the following extensions:
 
 - [ErrorLens](https://github.com/usernamehw/vscode-error-lens)
 - [GitHub Pull Requests and Issues](https://github.com/microsoft/vscode-pull-request-github)
@@ -278,7 +238,7 @@ Catppuccin for VSCode also themes the following extensions:
 
 ## Support
 
-If you have any questions regarding this port, feel free to [open an issue](https://github.com/catppuccin/vscode/issues) or ask in [our Discord](https://discord.catppuccin.com), where we have a [dedicated forum](https://discord.com/channels/907385605422448742/1020275848940626002) for support.
+If you have any questions regarding this fork, feel free to [open an issue](https://github.com/tsdevau/catppuccin-vscode/issues).
 
 ## Development
 
@@ -289,7 +249,7 @@ If you have any questions regarding this port, feel free to [open an issue](http
    TypeScript instead of the generated JSON.
 3. Make modifications in `./src` to see the changes immediately.
 
-## 💝 Thanks to
+## 💝 Thanks to the actual Catppuccin team!
 
 **Current maintainers**
 

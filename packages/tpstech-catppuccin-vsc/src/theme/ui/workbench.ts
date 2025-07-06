@@ -22,6 +22,7 @@ const workbench = (context: ThemeContext): WorkbenchPartial => {
       "titleBar.inactiveBackground": palette.mantle,
       "scrollbar.shadow": palette.mantle,
     },
+    // Add opacity to background elements as a test for minimal theme
     minimal: {
       "activityBar.background": opacity(palette.base, 0.7),
       "breadcrumb.background": opacity(palette.base, 0.5),

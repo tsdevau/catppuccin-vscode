@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.19.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vscode-v3.18.0...tpstech-catppuccin-vscode-v3.19.0) (2025-07-06)
+
+
+### Miscellaneous Chores
+
+* **tpstech-catppuccin-vscode:** Synchronize theme versions
+
 ## [3.18.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vscode-v3.17.1...tpstech-catppuccin-vscode-v3.18.0) (2025-03-30)
 
 

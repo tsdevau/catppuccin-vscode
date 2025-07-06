@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.19.1](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vsc-v3.19.0...tpstech-catppuccin-vsc-v3.19.1) (2025-07-06)
+
+
+### Reverts
+
+* **theme:** revert ineffective opacity from minimal theme background elements ([297e667](https://github.com/tsdevau/catppuccin-vscode/commit/297e667a703c3308f7fd2a1a3504554aa8e00cd2))
+
 ## [3.19.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vsc-v3.18.0...tpstech-catppuccin-vsc-v3.19.0) (2025-07-06)
 
 

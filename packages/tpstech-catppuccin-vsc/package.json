@@ -1,7 +1,7 @@
 {
   "name": "tpstech-catppuccin-vsc",
   "displayName": "Catppuccin by tpsTech for VSCode",
-  "version": "3.18.0",
+  "version": "3.19.0",
   "private": true,
   "description": "Soothing pastel theme based on Catppuccin with adjusted syntax highlighting for VSCode",
   "categories": [

@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.19.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vsc-v3.18.0...tpstech-catppuccin-vsc-v3.19.0) (2025-07-06)
+
+
+### Features
+
+* **workbench:** add opacity to minimal theme context ([c92ebf7](https://github.com/tsdevau/catppuccin-vscode/commit/c92ebf784c02b34a6b4bfd7cf26b18b4e2629618))
+
 ## [3.18.0](https://github.com/tsdevau/catppuccin-vscode/compare/tpstech-catppuccin-vsc-v3.17.1...tpstech-catppuccin-vsc-v3.18.0) (2025-03-30)
 
 
